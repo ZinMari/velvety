@@ -9,7 +9,9 @@ export const metadata: Metadata = {
 
 const fontDihjauti = localFont({
   src: "../../public/fonts/Dihjauti-Regular.woff",
+  style: "normal",
   variable: "--font-dihjauti",
+  fallback: ["serif"],
 });
 
 const fontAileron = localFont({
@@ -17,6 +19,7 @@ const fontAileron = localFont({
     {
       path: "../../public/fonts/Aileron-Light.woff",
       weight: "300",
+      style: "normal",
     },
     {
       path: "../../public/fonts/Aileron-Light.woff",
@@ -26,17 +29,21 @@ const fontAileron = localFont({
     {
       path: "../../public/fonts/Aileron-Regular.woff",
       weight: "400",
+      style: "normal",
     },
     {
       path: "../../public/fonts/Aileron-SemiBold.woff",
       weight: "600",
+      style: "normal",
     },
     {
       path: "../../public/fonts/Aileron-Bold.woff",
       weight: "700",
+      style: "normal",
     },
   ],
   variable: "--font-aileron",
+  fallback: ["sans-serif"],
 });
 
 export default function RootLayout({
@@ -46,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={fontAileron.className}>{children}</body>
     </html>
   );
 }
