@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "../../ui/Header";
 
 export const metadata: Metadata = {
   title: "VELVETY",
@@ -53,7 +54,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={fontAileron.className}>{children}</body>
+      <body className={fontAileron.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
