@@ -7,11 +7,27 @@ interface HeaderProps {
   className?: string;
 }
 
+const NAV_MENUS = [
+  ["Pages", "Shop", "About"],
+  ["Login", "Cart(0)"],
+];
+
 const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
     <header className={clsx(styles.header, className)}>
       <div className={styles.headerLogo}>
         <Logo />
+        <nav>
+          {NAV_MENUS.map((menu, index) => (
+            <ul key={index}>
+              {menu.map((link, index) => (
+                <li key={`${index}_${link}`}>
+                  <a href="#">{link}</a>
+                </li>
+              ))}
+            </ul>
+          ))}
+        </nav>
       </div>
     </header>
   );
