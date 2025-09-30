@@ -1,0 +1,11 @@
+.logo {
+  position: relative;
+  display: inline-block;
+  max-width: 137px;
+
+  &Svg {
+    width: 100%;
+    height: auto;
+    fill: white;
+  }
+}
