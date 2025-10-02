@@ -2,13 +2,19 @@
   display: flex;
   justify-content: space-between;
   background-color: #917373;
+  height: 84px;
+  align-items: center;
 
   &Logo {
   }
 
   &Nav {
-    width: 50vw;
+    width: 50%;
     display: flex;
     justify-content: space-between;
+  }
+
+  &List {
+    display: flex;
   }
 }

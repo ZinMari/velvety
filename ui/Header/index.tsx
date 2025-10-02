@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       </div>
       <nav className={styles.headerNav}>
         {NAV_MENUS.map((menu, index) => (
-          <ul key={index}>
+          <ul className={styles.headerList} key={index}>
             {menu.map((link, index) => (
               <li key={`${index}_${link}`}>
                 <a href="#">{link}</a>
