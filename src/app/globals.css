@@ -1,5 +1,5 @@
 :root {
-  --background: #f2f6ef;
+  --color-light: #f2f6ef;
 }
 
 html,
@@ -29,6 +29,13 @@ a {
 
 li {
   list-style-type: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 @media (prefers-color-scheme: dark) {

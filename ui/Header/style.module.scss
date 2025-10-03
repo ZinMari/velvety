@@ -1,9 +1,10 @@
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: #917373;
   height: 84px;
   align-items: center;
+  color: var(--color-light);
+  text-transform: uppercase;
 
   &Logo {
   }
@@ -16,5 +17,6 @@
 
   &List {
     display: flex;
+    gap: 48px;
   }
 }

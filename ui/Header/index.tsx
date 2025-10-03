@@ -2,7 +2,6 @@ import clsx from "clsx";
 import Logo from "../Logo";
 
 import styles from "./style.module.scss";
-import Container from "../Container";
 
 interface HeaderProps {
   className?: string;
@@ -15,8 +14,7 @@ const NAV_MENUS = [
 
 const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
-    <Container>
-      <header className={clsx(styles.header, className)}>
+    <header className={clsx(styles.header, className)}>
       <div className={styles.headerLogo}>
         <Logo />
       </div>
@@ -32,9 +30,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         ))}
       </nav>
     </header>
-  
-    </Container>
-    );
+  );
 };
 
 export default Header;
