@@ -62,6 +62,15 @@ export default function Home() {
           </div>
         </Container>
       </section>
+      <section className={styles.featuresProducts}>
+        <div className={styles.featuresProductsTitle}>
+          <Typography as="h2">Our featured products</Typography>
+          <Typography as="h3">
+            Facial and skincare, natural and certified organic
+          </Typography>
+        </div>
+        <div className={styles.featuresProductsProducts}></div>
+      </section>
     </main>
   );
 }

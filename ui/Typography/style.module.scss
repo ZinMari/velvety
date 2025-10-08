@@ -1,4 +1,11 @@
 .typography {
+  &H2 {
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 110%;
+    font-family: var(--font-aileron);
+    color: var(--color-green-title);
+  }
   &H3 {
     font-size: 56px;
     font-weight: 300;
