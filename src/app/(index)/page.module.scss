@@ -82,3 +82,28 @@
     text-align: center;
   }
 }
+
+.about {
+  &Container {
+    padding-top: 96px;
+    padding-bottom: 96px;
+    display: flex;
+    border-bottom: var(--border);
+    justify-content: space-between;
+  }
+
+  &Titles {
+    max-width: 566px;
+  }
+
+  &Title {
+    margin-bottom: 22px;
+  }
+
+  &Info {
+    max-width: 638px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
