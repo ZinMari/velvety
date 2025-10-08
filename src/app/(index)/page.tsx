@@ -51,7 +51,9 @@ export default function Home() {
                     <elem.icon />
                   </div>
                   <div className={styles.listInfo}>
-                    <Typography as="h4">{elem.title}</Typography>
+                    <Typography className={styles.listTitle} as="h4">
+                      {elem.title}
+                    </Typography>
                     <Typography as="p">{elem.text}</Typography>
                   </div>
                 </li>

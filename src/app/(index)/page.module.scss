@@ -24,6 +24,24 @@
   padding-top: 87px;
 
   &Container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .list {
     display: flex;
+    flex-direction: column;
+    gap: 56px;
+    padding-left: 56px;
+
+    &Item {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    &Title {
+      margin-bottom: 8px;
+    }
   }
 }
