@@ -40,7 +40,7 @@ export default function Home() {
               Inspired by&nbsp;traditional knowledge and nature
             </Typography>
             <div className={styles.featuresImage}>
-              <img src="./features.png" alt="" />
+              <img className={styles.featuresImg} src="./features.png" alt="" />
             </div>
           </div>
           <div className={styles.featuresRight}>

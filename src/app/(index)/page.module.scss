@@ -21,11 +21,26 @@
   height: 589px;
   display: flex;
   background: linear-gradient(to right, #f2f6ef 50.01%, #e4ece0 50.01% 100%);
-  padding-top: 87px;
+  padding-top: 98px;
+  border-bottom: var(--border);
 
   &Container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  &Left {
+    padding-right: 10px;
+  }
+
+  &Image {
+    max-width: 570px;
+    position: relative;
+    top: 50px;
+  }
+
+  &Img {
+    max-width: 100%;
   }
 
   .list {
@@ -42,6 +57,13 @@
 
     &Title {
       margin-bottom: 8px;
+    }
+
+    &Img {
+      min-width: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
