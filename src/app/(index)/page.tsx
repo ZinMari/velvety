@@ -1,6 +1,11 @@
 import Container from "../../../ui/Container";
 import Typography from "../../../ui/Typography";
-import { IconOrganic, IconSerum, IconSuitable } from "../../../ui/Icons";
+import {
+  IconArrow,
+  IconOrganic,
+  IconSerum,
+  IconSuitable,
+} from "../../../ui/Icons";
 
 import styles from "./page.module.scss";
 import clsx from "clsx";
@@ -147,6 +152,16 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </Container>
+      </section>
+      <section className={styles.processing}>
+        <Container>
+          <a href="#" className={styles.processingLink}>
+            <h2 className={styles.processingTitle}>
+              Let's see the processing of our products
+            </h2>
+            <IconArrow className={styles.processingArrow} />
+          </a>
         </Container>
       </section>
     </main>
