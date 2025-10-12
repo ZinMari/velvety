@@ -10,6 +10,7 @@ import {
 import styles from "./page.module.scss";
 import clsx from "clsx";
 import Button from "../../../ui/Button";
+import ProductCard from "../../../ui/ProductCard";
 
 const FEATURES_DATA = [
   {
@@ -65,6 +66,30 @@ const BRANDS_DATA = [
   },
 ];
 
+const BEST_PRODUCTS_DATA = [
+  {
+    id: 1,
+    name: "chicori",
+    src: "./products/chicori.png",
+    price: 20,
+    rating: 4.0,
+  },
+  {
+    id: 2,
+    name: "notorious",
+    src: "./products/notorious.png",
+    price: 23,
+    rating: 5.0,
+  },
+  {
+    id: 3,
+    name: "holocena",
+    src: "./products/holocena.png",
+    price: 20,
+    rating: 5.0,
+  },
+];
+
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -108,7 +133,25 @@ export default function Home() {
             Facial and skincare, natural and certified organic
           </Typography>
         </div>
-        <div className={styles.bestProductsProducts}></div>
+        <div className={styles.bestProductsProducts}>
+          <ul className={styles.bestProductsList}>
+            {BEST_PRODUCTS_DATA.map((product, index) => {
+              const backgroundType = index % 2 ? "ellipse" : "square";
+
+              return (
+                <li className={styles.bestProductsItem} key={product.id}>
+                  <ProductCard
+                    backgroundType={backgroundType}
+                    productName={product.name}
+                    price={product.price}
+                    rating={product.rating}
+                    productImg={product.src}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </section>
       <section className={styles.about}>
         <Container className={styles.aboutContainer}>

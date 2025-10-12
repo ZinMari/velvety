@@ -1,0 +1,28 @@
+.productCard {
+  padding: 32px;
+
+  &Image {
+    max-height: 528px;
+    background-color: var(--color-green-light);
+    margin-bottom: 24px;
+  }
+
+  &Title {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &WrapData {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-green-dark);
+  }
+
+  &Price {
+    font-weight: 700;
+    font-size: 22px;
+  }
+
+  &Rating {
+  }
+}
