@@ -84,6 +84,11 @@
     text-align: center;
   }
 
+  &Container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
   &Products {
     max-width: 1440;
     margin: 0 auto;
@@ -91,6 +96,13 @@
 
   &List {
     display: flex;
+  }
+
+  &Item {
+    padding: 32px;
+    &:not(:last-child) {
+      border-right: var(--border);
+    }
   }
 }
 

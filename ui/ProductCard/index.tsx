@@ -22,8 +22,16 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <article className={styles.productCard}>
-      <div className={styles.productCardImage}>
-        <img src={productImg} alt={productName} />
+      <div
+        className={clsx(styles.productCardImage, {
+          [styles.productCardImageEllipse]: backgroundType === "ellipse",
+        })}
+      >
+        <img
+          className={styles.productCardImg}
+          src={productImg}
+          alt={productName}
+        />
       </div>
       <div className={styles.productCardInfo}>
         <Typography as="h4" className={styles.productCardTitle}>

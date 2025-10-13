@@ -134,23 +134,25 @@ export default function Home() {
           </Typography>
         </div>
         <div className={styles.bestProductsProducts}>
-          <ul className={styles.bestProductsList}>
-            {BEST_PRODUCTS_DATA.map((product, index) => {
-              const backgroundType = index % 2 ? "ellipse" : "square";
+          <div className={styles.bestProductsContainer}>
+            <ul className={styles.bestProductsList}>
+              {BEST_PRODUCTS_DATA.map((product, index) => {
+                const backgroundType = index % 2 ? "ellipse" : "square";
 
-              return (
-                <li className={styles.bestProductsItem} key={product.id}>
-                  <ProductCard
-                    backgroundType={backgroundType}
-                    productName={product.name}
-                    price={product.price}
-                    rating={product.rating}
-                    productImg={product.src}
-                  />
-                </li>
-              );
-            })}
-          </ul>
+                return (
+                  <li className={styles.bestProductsItem} key={product.id}>
+                    <ProductCard
+                      backgroundType={backgroundType}
+                      productName={product.name}
+                      price={product.price}
+                      rating={product.rating}
+                      productImg={product.src}
+                    />
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </section>
       <section className={styles.about}>
