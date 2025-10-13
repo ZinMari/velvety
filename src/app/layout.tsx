@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "../../ui/Header";
 import Container from "../../ui/Container";
+import Footer from "../../ui/Footer";
 
 export const metadata: Metadata = {
   title: "VELVETY",
@@ -62,6 +63,9 @@ export default function RootLayout({
           </Container>
         </div>
         {children}
+        <Container>
+          <Footer />
+        </Container>
       </body>
     </html>
   );
