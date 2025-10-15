@@ -1,17 +1,17 @@
 .productCard {
   &Image {
     width: 100%;
-    min-height: 528px;
+    aspect-ratio: 26/33;
     background-color: var(--color-green-light);
     margin-bottom: 24px;
 
     &Ellipse {
-      border-radius: 10% / 50%;
+      border-radius: 50%;
     }
   }
 
   &Img {
-    min-width: 100%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
   }

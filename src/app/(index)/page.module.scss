@@ -89,13 +89,9 @@
     margin: 0 auto;
   }
 
-  &Products {
-    max-width: 1440;
-    margin: 0 auto;
-  }
-
   &List {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   &Item {
