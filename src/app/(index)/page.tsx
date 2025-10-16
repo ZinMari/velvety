@@ -11,6 +11,7 @@ import styles from "./page.module.scss";
 import clsx from "clsx";
 import Button from "../../../ui/Button";
 import ProductCard from "../../../ui/ProductCard";
+import CategoriesButton from "../../../ui/CategoriesButton";
 
 const FEATURES_DATA = [
   {
@@ -88,6 +89,26 @@ const BEST_PRODUCTS_DATA = [
     price: 20,
     rating: 5.0,
   },
+];
+
+const PRODUCT_CATEGORIES_DATA = [
+  { id: 1, name: "All needs" },
+  { id: 2, name: "Protect" },
+  { id: 3, name: "Regenerates" },
+  { id: 4, name: "Revitalizes" },
+  { id: 5, name: "Feeds" },
+  { id: 6, name: "Regulates" },
+  { id: 7, name: "Purifies" },
+  { id: 8, name: "Makeup Removal" },
+  { id: 9, name: "Exfoliate" },
+  { id: 10, name: "Antioxidant" },
+  { id: 11, name: "Soothes" },
+  { id: 12, name: "Smoothes skin texture" },
+  { id: 13, name: "Tones" },
+  { id: 14, name: "Anti-waste" },
+  { id: 15, name: "Hydrate" },
+  { id: 16, name: "Strengthens" },
+  { id: 17, name: "Regenerates after UV exposure Strengthens" },
 ];
 
 export default function Home() {
@@ -234,6 +255,22 @@ export default function Home() {
             </Typography>
             <Button>Start my&nbsp;diagnosis</Button>
           </div>
+        </Container>
+      </section>
+      <section className={styles.allProducts}>
+        <Container className={styles.allProductsContainer}>
+          <div className={styles.allProductsLeft}>
+            <Typography as="h2">All Products</Typography>
+            <Typography as="h3">
+              Mild skincare &amp;&nbsp;facial routine
+            </Typography>
+            <ul className={styles.allProductsCategories}>
+              {PRODUCT_CATEGORIES_DATA.map((e) => (
+                <li key={e.id}>{<CategoriesButton text={e.name} />}</li>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.allProductsRight}></div>
         </Container>
       </section>
     </main>
