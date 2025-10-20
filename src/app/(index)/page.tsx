@@ -289,8 +289,10 @@ export default function Home() {
       <section className={styles.allProducts}>
         <Container className={styles.allProductsContainer}>
           <div className={styles.allProductsLeft}>
-            <Typography as="h2">All Products</Typography>
-            <Typography as="h3">
+            <Typography as="h2" className={styles.allProductsTitle}>
+              All Products
+            </Typography>
+            <Typography as="h3" className={styles.allProductsSubtitle}>
               Mild skincare &amp;&nbsp;facial routine
             </Typography>
             <ul className={styles.allProductsCategories}>
@@ -299,7 +301,20 @@ export default function Home() {
               ))}
             </ul>
           </div>
-          <div className={styles.allProductsRight}></div>
+          <div className={styles.allProductsRight}>
+            <ul className={styles.allProductsList}>
+              {PRODUCTS_DATA.slice(0, 4).map((e) => (
+                <li className={styles.allProductsCard}>
+                  <ProductCard
+                    productName={e.name}
+                    productImg={e.src}
+                    rating={e.rating}
+                    price={e.price}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
         </Container>
       </section>
     </main>
