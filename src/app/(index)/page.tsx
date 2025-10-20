@@ -310,6 +310,7 @@ export default function Home() {
                     productImg={e.src}
                     rating={e.rating}
                     price={e.price}
+                    variant="min"
                   />
                 </li>
               ))}

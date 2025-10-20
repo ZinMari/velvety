@@ -6,6 +6,7 @@ import Typography from "../Typography";
 interface ProductCardProps {
   className?: string;
   backgroundType?: "ellipse" | "square";
+  variant?: "min" | "max";
   productName: string;
   productImg: string;
   price: number;
@@ -16,12 +17,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
   className,
   backgroundType = "square",
   productName = "product name",
+  variant = "max",
   price,
   rating,
   productImg,
 }) => {
   return (
-    <article className={styles.productCard}>
+    <article className={clsx(styles.productCard, className)}>
       <div
         className={clsx(styles.productCardImage, {
           [styles.productCardImageEllipse]: backgroundType === "ellipse",
@@ -34,7 +36,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
         />
       </div>
       <div className={styles.productCardInfo}>
-        <Typography as="h4" className={styles.productCardTitle}>
+        <Typography
+          as="h4"
+          className={clsx(
+            styles.productCardTitle,
+            variant === "min" && styles.productCardTitleMin
+          )}
+        >
           {productName}
         </Typography>
         <div className={styles.productCardWrapData}>
