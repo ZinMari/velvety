@@ -1,4 +1,15 @@
 .categoriesButton {
   background-color: transparent;
   padding: 13.5px 26px;
+  border: var(--border);
+  border-radius: 40px;
+  font-size: 18px;
+  color: var(--color-green-title);
+  font-weight: 400;
+  cursor: pointer;
+
+  &Active {
+    font-weight: 700;
+    background-color: var(--color-green-light);
+  }
 }
