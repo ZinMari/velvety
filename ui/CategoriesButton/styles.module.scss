@@ -9,7 +9,9 @@
   cursor: pointer;
 
   &Active {
-    font-weight: 700;
+    color: var(--color-green-dark);
+    text-shadow: 0.6px 0px 0px var(--color-green-dark),
+      -0.6px 0px 0px var(--color-green-dark);
     background-color: var(--color-green-light);
   }
 }
