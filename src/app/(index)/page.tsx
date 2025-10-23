@@ -315,6 +315,7 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            <Button>Shop now</Button>
           </div>
         </Container>
       </section>
