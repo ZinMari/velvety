@@ -19,10 +19,6 @@
   &Title {
     text-transform: uppercase;
     margin-bottom: 10px;
-
-    &Min {
-      font-size: 22px;
-    }
   }
 
   &WrapData {
@@ -37,5 +33,28 @@
   }
 
   &Rating {
+  }
+
+  &MinVariant {
+    border: var(--border);
+
+    .productCardImage {
+      aspect-ratio: 61/64;
+      border-bottom: var(--border);
+      margin-bottom: 0;
+    }
+
+    .productCardInfo {
+      padding: 24px;
+    }
+
+    .productCardTitle {
+      font-size: 22px;
+    }
+
+    .productCardWrapData {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 }

@@ -23,7 +23,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
   productImg,
 }) => {
   return (
-    <article className={clsx(styles.productCard, className)}>
+    <article
+      className={clsx(
+        styles.productCard,
+        variant === "min" && styles.productCardMinVariant,
+        className
+      )}
+    >
       <div
         className={clsx(styles.productCardImage, {
           [styles.productCardImageEllipse]: backgroundType === "ellipse",
@@ -36,13 +42,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         />
       </div>
       <div className={styles.productCardInfo}>
-        <Typography
-          as="h4"
-          className={clsx(
-            styles.productCardTitle,
-            variant === "min" && styles.productCardTitleMin
-          )}
-        >
+        <Typography as="h4" className={clsx(styles.productCardTitle)}>
           {productName}
         </Typography>
         <div className={styles.productCardWrapData}>
