@@ -2,7 +2,10 @@ import Container from "../../../ui/Container";
 import Typography from "../../../ui/Typography";
 import {
   IconArrow,
+  IconFace,
+  IconGift,
   IconOrganic,
+  IconPeople,
   IconSerum,
   IconSuitable,
 } from "../../../ui/Icons";
@@ -12,6 +15,7 @@ import clsx from "clsx";
 import Button from "../../../ui/Button";
 import ProductCard from "../../../ui/ProductCard";
 import CategoriesButton from "../../../ui/CategoriesButton";
+import ActionCard from "../../../ui/ActionCard";
 
 const FEATURES_DATA = [
   {
@@ -136,6 +140,30 @@ const PRODUCT_CATEGORIES_DATA = [
   { id: 15, name: "Hydrate" },
   { id: 16, name: "Strengthens" },
   { id: 17, name: "Regenerates after UV exposure Strengthens" },
+];
+
+const ACTION_CARDS = [
+  {
+    id: 1,
+    subtitle: "Loyalty Program",
+    title: "For Happy Skin",
+    buttonText: "Join the program",
+    icon: IconGift,
+  },
+  {
+    id: 2,
+    subtitle: "Organic beauty is shared,",
+    title: "Sponsor those you love!",
+    buttonText: "Refer a Friend",
+    icon: IconPeople,
+  },
+  {
+    id: 3,
+    subtitle: "Treat yourself to good weather",
+    title: "at Maison Absolution",
+    buttonText: "Try Our Treatments",
+    icon: IconFace,
+  },
 ];
 
 export default function Home() {
@@ -317,6 +345,22 @@ export default function Home() {
             </ul>
             <Button>Shop now</Button>
           </div>
+        </Container>
+      </section>
+      <section className={styles.actionButtons}>
+        <Container>
+          <ul className={styles.actionButtonsList}>
+            {ACTION_CARDS.map((card) => (
+              <li key={card.id}>
+                <ActionCard
+                  Icon={card.icon}
+                  title={card.title}
+                  subtitle={card.subtitle}
+                  buttonText={card.buttonText}
+                />
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
     </main>
