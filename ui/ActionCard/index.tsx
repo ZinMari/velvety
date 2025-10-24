@@ -20,10 +20,15 @@ const ActionCard: React.FC<ActionCardProps> = ({
   buttonText,
 }) => {
   return (
-    <article className={styles.actionCard}>
-      <Icon />
-      <Typography as="h5">
-        <span>{subtitle}</span>
+    <article className={clsx(styles.actionCard, className)}>
+      <div className={styles.actionCardIcon}>
+        <Icon />
+      </div>
+      <Typography as="h5" className={styles.actionCardTitle}>
+        <span className={styles.actionCardSubtitle}>
+          {subtitle}
+          <br />
+        </span>
         {title}
       </Typography>
       <Button>{buttonText}</Button>
