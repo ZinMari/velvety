@@ -351,8 +351,9 @@ export default function Home() {
         <Container>
           <ul className={styles.actionButtonsList}>
             {ACTION_CARDS.map((card) => (
-              <li key={card.id}>
+              <li key={card.id} className={styles.actionButtonsItem}>
                 <ActionCard
+                  className={styles.actionButtonsCard}
                   Icon={card.icon}
                   title={card.title}
                   subtitle={card.subtitle}
