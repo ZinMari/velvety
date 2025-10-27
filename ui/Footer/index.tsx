@@ -14,7 +14,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
       <Container className={styles.footerContainer}>
         <div className={styles.footerHeader}>
           <address className={styles.footerAddress}>
-            <Logo className={styles.footerAddressLogo} />
+            <Logo className={styles.footerAddressLogo} color="#213721" />
             <p className={styles.footerAddressTitle}>Opening hours</p>
             <p className={styles.footerAddressTime}>
               Monday to&nbsp;Saturday: 10:30 a.m.&nbsp;to&nbsp;7&nbsp;p.m.
