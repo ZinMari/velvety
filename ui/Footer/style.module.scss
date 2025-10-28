@@ -23,6 +23,25 @@
       margin-bottom: 10px;
     }
   }
+
+  &Nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    text-align: center;
+
+    &Title {
+      color: var(--color-green-title);
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 24px;
+    }
+
+    &Item {
+      font-size: 22px;
+      color: var(--color-green-dark);
+      margin-bottom: 18px;
+    }
+  }
 }
 
 .socialIcons {
