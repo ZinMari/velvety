@@ -3,6 +3,10 @@
   display: inline-block;
   max-width: 137px;
 
+  &SizeMax {
+    max-width: 171px;
+  }
+
   &Svg {
     width: 100%;
     height: auto;

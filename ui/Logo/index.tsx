@@ -5,11 +5,22 @@ import styles from "./style.module.scss";
 interface LogoProps {
   className?: string;
   color?: string;
+  size?: "min" | "max";
 }
 
-const Logo: React.FC<LogoProps> = ({ className, color = "currentColor" }) => {
+const Logo: React.FC<LogoProps> = ({
+  className,
+  color = "currentColor",
+  size = "min",
+}) => {
   return (
-    <a className={clsx(styles.logo, className)}>
+    <a
+      className={clsx(
+        styles.logo,
+        size === "max" && styles.logoSizeMax,
+        className
+      )}
+    >
       <svg
         className={styles.logoSvg}
         viewBox="0 0 175 55"
