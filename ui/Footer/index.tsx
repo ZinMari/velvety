@@ -8,6 +8,27 @@ interface FooterProps {
   className?: string;
 }
 
+const FOOTER_NAV = {
+  Shop: ["Skincare", "Facial", "Soap", "Candles", "Auto Fragrances", "Gifts"],
+  "Help Desk": [
+    "Chat",
+    "FAQ",
+    "Shipping & Returns",
+    "Contact",
+    "Policies",
+    "Accessibility",
+    "My Account",
+  ],
+  Stores: [
+    "Manhattan",
+    "Brooklyn",
+    "Tokyo",
+    "Jakarta",
+    "Paris",
+    "Buenos Aires",
+  ],
+};
+
 const Footer: React.FC<FooterProps> = ({}) => {
   return (
     <footer className={styles.footer}>
@@ -48,7 +69,25 @@ const Footer: React.FC<FooterProps> = ({}) => {
               </li>
             </ul>
           </address>
-          <div className={styles.footerNav}></div>
+          <nav className={styles.footerNav}>
+            {Object.entries(FOOTER_NAV).map(([title, links], index) => (
+              <div className={styles.footerNavColumn} key={title + index}>
+                <h3 className={styles.footerNavTitle}>{title}</h3>
+                <ul className={styles.footerNavList}>
+                  {links.map((link, index) => (
+                    <li className={styles.footerNavItem} key={link + index}>
+                      <a
+                        className={styles.footerNavLink}
+                        href="mock-address/change-me"
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
         </div>
         <div className={styles.footerFooter}></div>
       </Container>
