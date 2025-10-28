@@ -32,7 +32,7 @@ const FOOTER_NAV = {
 const Footer: React.FC<FooterProps> = ({}) => {
   return (
     <footer className={styles.footer}>
-      <Container className={styles.footerContainer}>
+      <div className={styles.footerContainer}>
         <div className={styles.footerHeader}>
           <address className={styles.footerAddress}>
             <Logo className={styles.footerAddressLogo} color="#213721" />
@@ -90,7 +90,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
           </nav>
         </div>
         <div className={styles.footerFooter}></div>
-      </Container>
+      </div>
     </footer>
   );
 };
