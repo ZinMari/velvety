@@ -98,6 +98,14 @@ const Footer: React.FC<FooterProps> = ({}) => {
               </div>
             ))}
           </nav>
+          <div className={styles.footerSide}>
+            <a className={styles.footerCredits} href="mock-address/change-me">
+              site credits
+            </a>
+            <span className={styles.footerCopyright}>
+              &copy;{new Date().getFullYear()}&nbsp;velvety
+            </span>
+          </div>
         </Container>
       </div>
       <div className={styles.footerFooter}>
