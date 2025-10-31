@@ -42,6 +42,8 @@
     }
 
     &Column {
+      padding-bottom: 40px;
+
       &:not(:last-child) {
         border-right: var(--border);
       }
@@ -52,6 +54,33 @@
       color: var(--color-green-dark);
       margin-bottom: 18px;
     }
+  }
+
+  &Footer {
+    padding: 20px 0;
+    font-size: 18px;
+    color: #617c5f;
+    font-weight: 400;
+  }
+
+  &FooterContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &AuthorLink,
+  &DocsLink {
+    color: var(--color-green-dark);
+  }
+
+  &AuthorLink {
+    font-weight: 600;
+  }
+
+  &Docs {
+    display: flex;
+    gap: 40px;
   }
 }
 
