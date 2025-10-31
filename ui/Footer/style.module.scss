@@ -1,6 +1,9 @@
 .footer {
   &Header {
     border-bottom: var(--border);
+  }
+
+  &HeaderContainer {
     display: grid;
     grid-template-columns: 1fr 3fr;
   }

@@ -29,11 +29,17 @@ const FOOTER_NAV = {
   ],
 };
 
+const FOOTER_DOCS = [
+  { id: 1, name: "Licenses", link: "mock-address/change-me" },
+  { id: 2, name: "Privacy", link: "mock-address/change-me" },
+  { id: 3, name: "Terms", link: "mock-address/change-me" },
+];
+
 const Footer: React.FC<FooterProps> = ({}) => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.footerContainer}>
-        <div className={styles.footerHeader}>
+      <div className={styles.footerHeader}>
+        <Container className={styles.footerHeaderContainer}>
           <address className={styles.footerAddress}>
             <Logo
               className={styles.footerAddressLogo}
@@ -92,8 +98,36 @@ const Footer: React.FC<FooterProps> = ({}) => {
               </div>
             ))}
           </nav>
-        </div>
-        <div className={styles.footerFooter}></div>
+        </Container>
+      </div>
+      <div className={styles.footerFooter}>
+        <Container className={styles.footerFooterContainer}>
+          <p className={styles.footerAuthors}>
+            &copy;&nbsp;Designed by&nbsp;
+            <a
+              className={styles.footerAuthorLink}
+              href="mock-address/change-me"
+            >
+              DhuhaCreative.
+            </a>
+            &nbsp;Powered by&nbsp;
+            <a
+              className={styles.footerAuthorLink}
+              href="mock-address/change-me"
+            >
+              UI8.
+            </a>
+          </p>
+          <ul className={styles.footerDocs}>
+            {FOOTER_DOCS.map((doc) => (
+              <li className={styles.footerDocsItem} key={doc.id}>
+                <a href={doc.link} className={styles.footerDocsLink}>
+                  {doc.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </Container>
       </div>
     </footer>
   );
