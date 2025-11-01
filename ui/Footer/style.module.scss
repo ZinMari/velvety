@@ -3,7 +3,7 @@
     border-bottom: var(--border);
   }
 
-  &HeaderContainer {
+  &Wrap {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -59,8 +59,15 @@
 
   &Side {
     position: absolute;
-    left: calc(100% - 78px);
+    left: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    gap: 24px;
     writing-mode: vertical-rl;
+    color: var(--color-green-dark);
+    text-transform: uppercase;
+    font-size: 12px;
   }
 
   &Footer {
