@@ -2,6 +2,7 @@ import clsx from "clsx";
 
 import styles from "./style.module.scss";
 import Typography from "../Typography";
+import StarRating from "../StarRating";
 
 interface ProductCardProps {
   className?: string;
@@ -47,7 +48,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </Typography>
         <div className={styles.productCardWrapData}>
           <p className={styles.productCardPrice}>{`$${price}`}</p>
-          <p className={styles.productCardRating}>{rating}</p>
+          <div className={styles.productCardRating}>
+            <StarRating value={rating} className={styles.productCardStars} />
+            <span>{rating.toFixed(1)}</span>
+          </div>
         </div>
       </div>
     </article>

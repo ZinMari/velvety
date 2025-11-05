@@ -33,6 +33,15 @@
   }
 
   &Rating {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 300;
+  }
+
+  &Stars {
+    width: 116px;
   }
 
   &MinVariant {
