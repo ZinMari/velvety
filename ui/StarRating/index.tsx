@@ -1,6 +1,8 @@
+import cl from "clsx";
 import { IconStar } from "../Icons";
 
 let nextId = 0;
+
 const generateStarIds = (count: number) => {
   return Array.from({ length: count }, () => `star-${nextId++}`);
 };
@@ -15,8 +17,8 @@ interface StarRatingProps {
 
 const StarRating: React.FC<StarRatingProps> = ({
   className,
-  color = "#e4c616",
-  iconSize = 24,
+  color = "var(--color-green-middle)",
+  iconSize = 18,
   maxStars = 5,
   value,
 }) => {
@@ -59,11 +61,12 @@ const StarRating: React.FC<StarRatingProps> = ({
   const renderStars = () => {
     return Array.from({ length: maxStars }).map((_, index) => {
       const style = getStarStyle(index);
-      return <IconStar key={index} style={style} />;
+      return <IconStar key={index} style={style} width={iconSize} />;
     });
   };
+
   return (
-    <div>
+    <div className={cl(className)}>
       <svg width="0" height="0" style={{ position: "absolute" }}>
         <defs>{renderGradientDefs()}</defs>
       </svg>

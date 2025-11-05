@@ -357,7 +357,7 @@ export default function Home() {
           <div className={styles.reviewsInfo}>
             <Typography as="h2">Product Testimonials</Typography>
             <div className={styles.reviewsSlider}>
-              <StarRating value={3.4} />
+              <StarRating value={3.5} />
             </div>
           </div>
         </Container>
