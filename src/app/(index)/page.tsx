@@ -16,6 +16,8 @@ import Button from "../../../ui/Button";
 import ProductCard from "../../../ui/ProductCard";
 import CategoriesButton from "../../../ui/CategoriesButton";
 import ActionCard from "../../../ui/ActionCard";
+import Slider from "../../../ui/Slider";
+import StarRating from "../../../ui/StarRating";
 
 const FEATURES_DATA = [
   {
@@ -344,6 +346,19 @@ export default function Home() {
               ))}
             </ul>
             <Button>Shop now</Button>
+          </div>
+        </Container>
+      </section>
+      <section className={styles.reviews}>
+        <Container className={styles.reviewsWrap}>
+          <div className={styles.reviewsProduct}>
+            <img src="/products/holocena.png" alt="" />
+          </div>
+          <div className={styles.reviewsInfo}>
+            <Typography as="h2">Product Testimonials</Typography>
+            <div className={styles.reviewsSlider}>
+              <StarRating value={3.4} />
+            </div>
           </div>
         </Container>
       </section>
