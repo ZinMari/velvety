@@ -168,6 +168,24 @@ const ACTION_CARDS = [
   },
 ];
 
+const REVIEWS_DATA = [
+  {
+    id: 0,
+    text: "&laquo;I&rsquo;ve been feeling pretty stressed with my&nbsp;skin lately, so&nbsp;I picked up&nbsp;a&nbsp;set of&nbsp;HOLOCENA skincare. Oh&nbsp;my&nbsp;goodness!. It&nbsp;was AMAZING. My&nbsp;skin felt so&nbsp;soft and moisturized&raquo;",
+    rating: 5,
+  },
+  {
+    id: 1,
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nemo dicta aliquid eius aliquam distinctio ducimus aspernatur eum maiores molestias.",
+    rating: 5,
+  },
+  {
+    id: 1,
+    text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, recusandae? Pariatur eveniet natus officiis reiciendis accusantium quam repellendus ratione perspiciatis hic dicta assumenda commodi rem distinctio ipsam aut voluptates, harum sequi? Expedita, iusto. Minima exercitationem molestiae earum cumque nostrum asperiores veritatis numquam iusto debitis harum qui accusamus a velit, hic quia quas accusantium ullam eum placeat totam ab itaque excepturi.",
+    rating: 4.75,
+  },
+];
+
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -356,9 +374,7 @@ export default function Home() {
           </div>
           <div className={styles.reviewsInfo}>
             <Typography as="h2">Product Testimonials</Typography>
-            <div className={styles.reviewsSlider}>
-              <StarRating value={3.5} />
-            </div>
+            <div className={styles.reviewsSlider}></div>
           </div>
         </Container>
       </section>
