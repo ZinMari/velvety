@@ -375,6 +375,9 @@ export default function Home() {
           <div className={styles.reviewsInfo}>
             <Typography as="h2">Product Testimonials</Typography>
             <div className={styles.reviewsSlider}></div>
+            <p className={styles.reviewsCaption}>
+              &mdash;&nbsp;Customer Review
+            </p>
           </div>
         </Container>
       </section>
