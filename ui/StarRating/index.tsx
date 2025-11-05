@@ -1,5 +1,7 @@
-import cl from "clsx";
 import { IconStar } from "../Icons";
+
+import cl from "clsx";
+import styles from "./style.module.scss";
 
 let nextId = 0;
 
@@ -66,7 +68,7 @@ const StarRating: React.FC<StarRatingProps> = ({
   };
 
   return (
-    <div className={cl(className)}>
+    <div className={cl(className, styles.starRating)}>
       <svg width="0" height="0" style={{ position: "absolute" }}>
         <defs>{renderGradientDefs()}</defs>
       </svg>
