@@ -302,7 +302,7 @@ export default function Home() {
         <Container>
           <a href="#" className={styles.processingLink}>
             <h2 className={styles.processingTitle}>
-              Let's see the processing of our products
+              Let&rsquo;s see the processing of&nbsp;our products
             </h2>
             <IconArrow className={styles.processingArrow} />
           </a>
@@ -352,7 +352,7 @@ export default function Home() {
           <div className={styles.allProductsRight}>
             <ul className={styles.allProductsList}>
               {PRODUCTS_DATA.slice(0, 4).map((e) => (
-                <li className={styles.allProductsCard}>
+                <li className={styles.allProductsCard} key={e.id}>
                   <ProductCard
                     productName={e.name}
                     productImg={e.src}
