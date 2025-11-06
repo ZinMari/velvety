@@ -389,23 +389,6 @@ export default function Home() {
           </div>
         </Container>
       </section>
-      <section className={styles.subscribe}>
-        <Container className={styles.subscribeContainer}>
-          <h2 className={styles.subscribeTitle}>
-            Subscribe to&nbsp;get&nbsp;10% off your first order
-          </h2>
-          <form className={styles.subscribeForm}>
-            <input
-              type="email"
-              placeholder="Drop your email here"
-              className={styles.subscribeInput}
-            />
-            <button className={styles.subscribeButton}>
-              <IconArrow width={48} fill="var(--color-green-dark)" />
-            </button>
-          </form>
-        </Container>
-      </section>
       <section className={styles.actionButtons}>
         <Container>
           <ul className={styles.actionButtonsList}>
@@ -421,6 +404,23 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </Container>
+      </section>
+      <section className={styles.subscribe}>
+        <Container className={styles.subscribeContainer}>
+          <h2 className={styles.subscribeTitle}>
+            Subscribe to&nbsp;get&nbsp;10% off your first order
+          </h2>
+          <form className={styles.subscribeForm}>
+            <input
+              type="email"
+              placeholder="Drop your email here"
+              className={styles.subscribeInput}
+            />
+            <button className={styles.subscribeButton}>
+              <IconArrow width={48} fill="var(--color-green-dark)" />
+            </button>
+          </form>
         </Container>
       </section>
     </main>
