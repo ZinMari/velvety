@@ -18,6 +18,7 @@ import CategoriesButton from "../../../ui/CategoriesButton";
 import ActionCard from "../../../ui/ActionCard";
 import Slider from "../../../ui/Slider";
 import StarRating from "../../../ui/StarRating";
+import Review from "../../../ui/Review";
 
 const FEATURES_DATA = [
   {
@@ -168,23 +169,28 @@ const ACTION_CARDS = [
   },
 ];
 
-const REVIEWS_DATA = [
-  {
-    id: 0,
-    text: "&laquo;I&rsquo;ve been feeling pretty stressed with my&nbsp;skin lately, so&nbsp;I picked up&nbsp;a&nbsp;set of&nbsp;HOLOCENA skincare. Oh&nbsp;my&nbsp;goodness!. It&nbsp;was AMAZING. My&nbsp;skin felt so&nbsp;soft and moisturized&raquo;",
-    rating: 5,
-  },
-  {
-    id: 1,
-    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nemo dicta aliquid eius aliquam distinctio ducimus aspernatur eum maiores molestias.",
-    rating: 5,
-  },
-  {
-    id: 1,
-    text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, recusandae? Pariatur eveniet natus officiis reiciendis accusantium quam repellendus ratione perspiciatis hic dicta assumenda commodi rem distinctio ipsam aut voluptates, harum sequi? Expedita, iusto. Minima exercitationem molestiae earum cumque nostrum asperiores veritatis numquam iusto debitis harum qui accusamus a velit, hic quia quas accusantium ullam eum placeat totam ab itaque excepturi.",
-    rating: 4.75,
-  },
-];
+const renderReviewsArray = () => {
+  const REVIEWS_DATA = [
+    {
+      id: 0,
+      text: "&laquo;I&rsquo;ve been feeling pretty stressed with my&nbsp;skin lately, so&nbsp;I picked up&nbsp;a&nbsp;set of&nbsp;HOLOCENA skincare. Oh&nbsp;my&nbsp;goodness!. It&nbsp;was AMAZING. My&nbsp;skin felt so&nbsp;soft and moisturized&raquo;",
+      rating: 5,
+    },
+    {
+      id: 1,
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nemo dicta aliquid eius aliquam distinctio ducimus aspernatur eum maiores molestias.",
+      rating: 5,
+    },
+    {
+      id: 1,
+      text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, recusandae? Pariatur eveniet natus officiis reiciendis accusantium quam repellendus ratione perspiciatis hic dicta assumenda commodi rem distinctio ipsam aut voluptates, harum sequi? Expedita, iusto. Minima exercitationem molestiae earum cumque nostrum asperiores veritatis numquam iusto debitis harum qui accusamus a velit, hic quia quas accusantium ullam eum placeat totam ab itaque excepturi.",
+      rating: 4.75,
+    },
+  ];
+  return REVIEWS_DATA.map((review) => (
+    <Review key={review.id} text={review.text} rating={review.rating} />
+  ));
+};
 
 export default function Home() {
   return (
@@ -374,7 +380,9 @@ export default function Home() {
           </div>
           <div className={styles.reviewsInfo}>
             <Typography as="h2">Product Testimonials</Typography>
-            <div className={styles.reviewsSlider}></div>
+            <div className={styles.reviewsSlider}>
+              {renderReviewsArray()[0]}
+            </div>
             <p className={styles.reviewsCaption}>
               &mdash;&nbsp;Customer Review
             </p>
