@@ -255,6 +255,46 @@
   }
 }
 
+.reviews {
+  padding: 46px 0;
+  border-bottom: var(--border);
+
+  &Wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &Product {
+    max-width: 373px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &Info {
+    max-width: 794px;
+  }
+
+  &Title {
+    margin-bottom: 80px;
+  }
+
+  &Slider {
+    margin-bottom: 32px;
+  }
+
+  &Caption {
+    font-family: var(--font-aileron);
+    color: var(--color-green-title);
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+  }
+}
+
 .actionButtons {
   padding: 96px 0;
 

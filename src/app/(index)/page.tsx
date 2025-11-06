@@ -379,7 +379,9 @@ export default function Home() {
             <img src="/products/holocena.png" alt="" />
           </div>
           <div className={styles.reviewsInfo}>
-            <Typography as="h2">Product Testimonials</Typography>
+            <Typography className={styles.reviewsTitle} as="h2">
+              Product Testimonials
+            </Typography>
             <div className={styles.reviewsSlider}>
               {renderReviewsArray()[0]}
             </div>
