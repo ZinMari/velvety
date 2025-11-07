@@ -8,8 +8,8 @@ import { useEffect, useState } from "react";
 interface SliderProps {
   items: React.ReactNode[];
   className?: string;
-  autoPlay: boolean;
-  autoPlayTime: number;
+  autoPlay?: boolean;
+  autoPlayTime?: number;
 }
 
 const Slider: React.FC<SliderProps> = ({
