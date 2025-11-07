@@ -203,7 +203,22 @@ export default function Home() {
         <Container className={styles.featuresContainer}>
           <div className={styles.featuresLeft}>
             <Typography as="h3" className={styles.featuresTitle}>
-              Inspired by&nbsp;traditional knowledge and nature
+              <span
+                className={clsx(
+                  styles.featuresTitleLineFirst,
+                  styles.featuresTitleLine
+                )}
+              >
+                Inspired by&nbsp;traditional
+              </span>
+              <span
+                className={clsx(
+                  styles.featuresTitleLineSecond,
+                  styles.featuresTitleLine
+                )}
+              >
+                knowledge and nature
+              </span>
             </Typography>
             <div className={styles.featuresImage}>
               <img className={styles.featuresImg} src="./features.png" alt="" />
