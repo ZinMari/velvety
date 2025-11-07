@@ -19,6 +19,7 @@ const Slider: React.FC<SliderProps> = ({
   autoPlayTime = 1000,
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
+  const [touchPosition, setTouchPosition] = useState(null);
 
   const handlePreviousClick = () => {
     setCurrentImageIndex(
@@ -29,6 +30,29 @@ const Slider: React.FC<SliderProps> = ({
   const handleNextClick = () => {
     // (currentIndex + 1) % totalImages гарантирует, что по достижению последнего изображения, оно автоматически вернется к первому.
     setCurrentImageIndex((currentImageIndex + 1) % items.length);
+  };
+
+  const handleTouchStart = (e) => {
+    const touchDown = e.touches[0].clientX;
+    setTouchPosition(touchDown);
+  };
+
+  const handleTouchMove = (e) => {
+    if (touchPosition === null) {
+      return;
+    }
+
+    const currentPosition = e.touches[0].clientX;
+    const direction = touchPosition - currentPosition;
+
+    if (direction > 10) {
+      handleNextClick();
+    }
+    if (direction < -10) {
+      handlePreviousClick();
+    }
+
+    setTouchPosition(null);
   };
 
   // useEffect(() => {
@@ -47,7 +71,7 @@ const Slider: React.FC<SliderProps> = ({
       >
         Prev
       </button>
-      <ul>
+      <ul onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
         {items.map((item, index) => (
           <li
             className={
