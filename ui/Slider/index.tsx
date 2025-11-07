@@ -3,7 +3,7 @@ import StarRating from "../StarRating";
 import cl from "clsx";
 
 import styles from "./style.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface SliderProps {
   items: React.ReactNode[];
@@ -30,6 +30,14 @@ const Slider: React.FC<SliderProps> = ({
     // (currentIndex + 1) % totalImages гарантирует, что по достижению последнего изображения, оно автоматически вернется к первому.
     setCurrentImageIndex((currentImageIndex + 1) % items.length);
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      handleNextClick();
+    }, autoPlayTime);
+
+    return () => clearTimeout(timer);
+  }, [currentImageIndex]);
   return <div></div>;
 };
 
