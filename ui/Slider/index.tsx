@@ -1,4 +1,4 @@
-import StarRating from "../StarRating";
+"use client";
 
 import cl from "clsx";
 
@@ -31,14 +31,42 @@ const Slider: React.FC<SliderProps> = ({
     setCurrentImageIndex((currentImageIndex + 1) % items.length);
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      handleNextClick();
-    }, autoPlayTime);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     handleNextClick();
+  //   }, autoPlayTime);
 
-    return () => clearTimeout(timer);
-  }, [currentImageIndex]);
-  return <div></div>;
+  //   return () => clearTimeout(timer);
+  // }, [currentImageIndex]);
+
+  return (
+    <div className={cl(styles.slider, className)}>
+      <button
+        className={cl(styles.sliderBtn, styles.sliderBtnPrev)}
+        onClick={handlePreviousClick}
+      >
+        Prev
+      </button>
+      <ul>
+        {items.map((item, index) => (
+          <li
+            className={
+              currentImageIndex === index ? styles.block : styles.hidden
+            }
+            key={index}
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+      <button
+        className={cl(styles.sliderBtn, styles.sliderBtnNext)}
+        onClick={handleNextClick}
+      >
+        Next
+      </button>
+    </div>
+  );
 };
 
 export default Slider;

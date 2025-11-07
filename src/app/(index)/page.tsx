@@ -383,7 +383,7 @@ export default function Home() {
               Product Testimonials
             </Typography>
             <div className={styles.reviewsSlider}>
-              {renderReviewsArray()[0]}
+              {<Slider items={renderReviewsArray()} />}
             </div>
             <p className={styles.reviewsCaption}>
               &mdash;&nbsp;Customer Review
