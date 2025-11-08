@@ -2,8 +2,10 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 30px;
 
-  &Container {
+  &Slider {
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -19,5 +21,20 @@
     flex: 0 0 100%;
     width: 100%;
     height: 100%;
+  }
+
+  &Btn {
+    display: block;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    &Prev {
+      transform: scale(-1);
+    }
+  }
+
+  &Arrow {
+    max-width: 100%;
   }
 }

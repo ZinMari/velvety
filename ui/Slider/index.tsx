@@ -4,6 +4,7 @@ import cl from "clsx";
 
 import styles from "./style.module.scss";
 import { useEffect, useState } from "react";
+import { IconArrow } from "../Icons";
 
 interface SliderProps {
   items: React.ReactNode[];
@@ -65,14 +66,8 @@ const Slider: React.FC<SliderProps> = ({
 
   return (
     <div className={cl(styles.slider, className)}>
-      <button
-        className={cl(styles.sliderBtn, styles.sliderBtnPrev)}
-        onClick={handlePreviousClick}
-      >
-        Prev
-      </button>
       <div
-        className={styles.sliderContainer}
+        className={styles.sliderSlider}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
       >
@@ -87,12 +82,30 @@ const Slider: React.FC<SliderProps> = ({
           ))}
         </ul>
       </div>
-      <button
-        className={cl(styles.sliderBtn, styles.sliderBtnNext)}
-        onClick={handleNextClick}
-      >
-        Next
-      </button>
+      <div className={styles.sliderControls}>
+        <button
+          className={cl(styles.sliderBtn, styles.sliderBtnNext)}
+          onClick={handleNextClick}
+        >
+          <IconArrow
+            className={styles.sliderArrow}
+            fill="var(--color-green-dark)"
+            stroke="var(--color-green-dark)"
+            strokeWidth={1}
+          />
+        </button>
+        <button
+          className={cl(styles.sliderBtn, styles.sliderBtnPrev)}
+          onClick={handlePreviousClick}
+        >
+          <IconArrow
+            className={styles.sliderArrow}
+            fill="var(--color-green-dark)"
+            stroke="var(--color-green-dark)"
+            strokeWidth={1}
+          />
+        </button>
+      </div>
     </div>
   );
 };
