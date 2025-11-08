@@ -71,18 +71,22 @@ const Slider: React.FC<SliderProps> = ({
       >
         Prev
       </button>
-      <ul onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
-        {items.map((item, index) => (
-          <li
-            className={
-              currentImageIndex === index ? styles.block : styles.hidden
-            }
-            key={index}
-          >
-            {item}
-          </li>
-        ))}
-      </ul>
+      <div
+        className={styles.sliderContainer}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+      >
+        <ul
+          className={styles.sliderWrapper}
+          style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
+        >
+          {items.map((item, index) => (
+            <li className={styles.sliderSlide} key={index}>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
       <button
         className={cl(styles.sliderBtn, styles.sliderBtnNext)}
         onClick={handleNextClick}
