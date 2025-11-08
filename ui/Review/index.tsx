@@ -17,7 +17,7 @@ const Review: React.FC<ReviewProps> = ({
   return (
     <div className={cl(styles.review, className)}>
       <div className={styles.reviewStars}>
-        <StarRating value={rating} iconSize={38} />
+        <StarRating value={rating} iconSize={35} />
       </div>
       <p
         className={styles.reviewText}
