@@ -227,7 +227,15 @@ export default function Home() {
           <div className={styles.featuresRight}>
             <ul className={clsx(styles.featuresList, styles.list)}>
               {FEATURES_DATA.map((elem) => (
-                <li key={elem.id} className={styles.listItem}>
+                <li
+                  key={elem.id}
+                  className={styles.listItem}
+                  style={
+                    {
+                      "--animation-delay": `${elem.id * 0.15}s`,
+                    } as React.CSSProperties
+                  }
+                >
                   <div className={styles.listImg}>
                     <elem.icon />
                   </div>
