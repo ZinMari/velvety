@@ -11,5 +11,17 @@
     height: 4px;
     background-color: var(--color-green-dark);
     rotate: 45deg;
+    transition: var(--transition-general);
+  }
+
+  &Light {
+    &Active {
+      background-color: var(--color-green-dark);
+    }
+  }
+  &Dark {
+    &Active {
+      background-color: var(--color-green-title);
+    }
   }
 }

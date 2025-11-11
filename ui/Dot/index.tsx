@@ -6,6 +6,7 @@ interface DotProps {
   onClick: (number: number) => void;
   className?: string;
   theme?: "light" | "dark";
+  isActive?: boolean;
 }
 
 const Dot: React.FC<DotProps> = ({
@@ -13,16 +14,21 @@ const Dot: React.FC<DotProps> = ({
   number,
   className,
   onClick,
+  isActive,
 }) => {
+  const themeSuffix = theme === "dark" ? "Dark" : "Light";
+
   return (
     <button
       className={clsx(styles.dot, className)}
       onClick={() => onClick(number)}
     >
       <span
-        className={clsx(styles.dotVisible, {
-          [styles.dotVisibleLight]: theme === "light",
-        })}
+        className={clsx(
+          styles.dotVisible,
+          styles[`dot${themeSuffix}`],
+          isActive && styles[`dot${themeSuffix}Active`]
+        )}
       ></span>
     </button>
   );

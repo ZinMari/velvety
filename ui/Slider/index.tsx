@@ -64,8 +64,16 @@ const Slider: React.FC<SliderProps> = ({
 
   const renderDots = () => {
     const dots = [];
+
     for (let i = 0; i < items.length; i++) {
-      dots.push(<Dot key={`dot-${i}`} number={i} onClick={handleDotClick} />);
+      dots.push(
+        <Dot
+          key={`dot-${i}`}
+          number={i}
+          onClick={handleDotClick}
+          isActive={i === currentImageIndex}
+        />
+      );
     }
     return dots;
   };
