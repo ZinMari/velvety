@@ -24,14 +24,6 @@ const Slider: React.FC<SliderProps> = ({
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [touchPosition, setTouchPosition] = useState(null);
 
-  const renderDots = () => {
-    const dots = [];
-    for (let i = 0; i < items.length; i++) {
-      dots.push(<Dot key={`dot-${i}`} number={i} />);
-    }
-    return dots;
-  };
-
   const handlePreviousClick = () => {
     setCurrentImageIndex(
       currentImageIndex === 0 ? items.length - 1 : currentImageIndex - 1
@@ -41,6 +33,10 @@ const Slider: React.FC<SliderProps> = ({
   const handleNextClick = () => {
     // (currentIndex + 1) % totalImages гарантирует, что по достижению последнего изображения, оно автоматически вернется к первому.
     setCurrentImageIndex((currentImageIndex + 1) % items.length);
+  };
+
+  const handleDotClick = (sliderNumber: number) => {
+    setCurrentImageIndex(sliderNumber);
   };
 
   const handleTouchStart = (e) => {
@@ -64,6 +60,14 @@ const Slider: React.FC<SliderProps> = ({
     }
 
     setTouchPosition(null);
+  };
+
+  const renderDots = () => {
+    const dots = [];
+    for (let i = 0; i < items.length; i++) {
+      dots.push(<Dot key={`dot-${i}`} number={i} onClick={handleDotClick} />);
+    }
+    return dots;
   };
 
   // useEffect(() => {
@@ -94,7 +98,7 @@ const Slider: React.FC<SliderProps> = ({
       </div>
       <div className={styles.sliderControls}>
         <ArrowButton onClick={handleNextClick} type="right" />
-        <div>{renderDots()}</div>
+        <div className={styles.sliderDots}>{renderDots()}</div>
         <ArrowButton onClick={handlePreviousClick} type="left" />
       </div>
     </div>
