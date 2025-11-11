@@ -5,6 +5,7 @@ import cl from "clsx";
 import styles from "./style.module.scss";
 import { useEffect, useState } from "react";
 import { IconArrow } from "../Icons";
+import ArrowButton from "../ArrowButton";
 
 interface SliderProps {
   items: React.ReactNode[];
@@ -83,28 +84,8 @@ const Slider: React.FC<SliderProps> = ({
         </ul>
       </div>
       <div className={styles.sliderControls}>
-        <button
-          className={cl(styles.sliderBtn, styles.sliderBtnNext)}
-          onClick={handleNextClick}
-        >
-          <IconArrow
-            className={styles.sliderArrow}
-            fill="var(--color-green-dark)"
-            stroke="var(--color-green-dark)"
-            strokeWidth={1}
-          />
-        </button>
-        <button
-          className={cl(styles.sliderBtn, styles.sliderBtnPrev)}
-          onClick={handlePreviousClick}
-        >
-          <IconArrow
-            className={styles.sliderArrow}
-            fill="var(--color-green-dark)"
-            stroke="var(--color-green-dark)"
-            strokeWidth={1}
-          />
-        </button>
+        <ArrowButton onClick={handleNextClick} type="right" />
+        <ArrowButton onClick={handlePreviousClick} type="left" />
       </div>
     </div>
   );

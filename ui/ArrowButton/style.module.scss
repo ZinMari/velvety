@@ -1,0 +1,14 @@
+.arrowButton {
+  display: block;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &Left {
+    transform: scale(-1);
+  }
+
+  &Arrow {
+    max-width: 100%;
+  }
+}
