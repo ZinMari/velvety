@@ -6,6 +6,7 @@ import styles from "./style.module.scss";
 import { useEffect, useState } from "react";
 import { IconArrow } from "../Icons";
 import ArrowButton from "../ArrowButton";
+import Dot from "../Dot";
 
 interface SliderProps {
   items: React.ReactNode[];
@@ -22,6 +23,14 @@ const Slider: React.FC<SliderProps> = ({
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [touchPosition, setTouchPosition] = useState(null);
+
+  const renderDots = () => {
+    const dots = [];
+    for (let i = 0; i < items.length; i++) {
+      dots.push(<Dot key={`dot-${i}`} number={i} />);
+    }
+    return dots;
+  };
 
   const handlePreviousClick = () => {
     setCurrentImageIndex(
@@ -85,6 +94,7 @@ const Slider: React.FC<SliderProps> = ({
       </div>
       <div className={styles.sliderControls}>
         <ArrowButton onClick={handleNextClick} type="right" />
+        <div>{renderDots()}</div>
         <ArrowButton onClick={handlePreviousClick} type="left" />
       </div>
     </div>
