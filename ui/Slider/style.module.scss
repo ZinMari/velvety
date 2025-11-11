@@ -4,6 +4,7 @@
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 30px;
+  gap: 60px;
 
   &Slider {
     position: relative;
