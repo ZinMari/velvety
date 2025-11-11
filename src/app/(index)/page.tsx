@@ -178,13 +178,18 @@ const renderReviewsArray = () => {
     },
     {
       id: 1,
-      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nemo dicta aliquid eius aliquam distinctio ducimus aspernatur eum maiores molestias.",
+      text: "&laquo;After trying HOLOCENA for two weeks, my&nbsp;complexion has never looked better! The products are gentle yet effective. Highly recommend!&raquo;",
       rating: 5,
     },
     {
-      id: 1,
-      text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, recusandae? Pariatur eveniet natus officiis reiciendis accusantium quam repellendus ratione perspiciatis hic dicta assumenda commodi rem distinctio ipsam aut voluptates, harum sequi? Expedita, iusto. Minima exercitationem molestiae earum cumque nostrum asperiores veritatis numquam iusto debitis harum qui accusamus a velit, hic quia quas accusantium ullam eum placeat totam ab itaque excepturi.",
-      rating: 4.75,
+      id: 2,
+      text: "&laquo;I was skeptical at first, but HOLOCENA completely transformed my&nbsp;skin. Reduced redness and improved texture dramatically&raquo;",
+      rating: 4,
+    },
+    {
+      id: 3,
+      text: "&laquo;My dermatologist recommended HOLOCENA and I&rsquo;m so&nbsp;glad she did! Perfect for sensitive skin and really delivers results&raquo;",
+      rating: 5,
     },
   ];
   return REVIEWS_DATA.map((review) => (
