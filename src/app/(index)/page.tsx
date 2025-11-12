@@ -19,39 +19,7 @@ import HeroSection from "../../../components/sections/HeroSection";
 import FeaturesSection from "../../../components/sections/FeaturesSection";
 import BestProductsSection from "../../../components/sections/BestProductsSection";
 import AboutSection from "../../../components/sections/AboutSecton";
-
-const BRANDS_DATA = [
-  {
-    id: 1,
-    name: "vogue",
-    src: "./brands/vogue.svg",
-    link: "",
-  },
-  {
-    id: 2,
-    name: "forbes",
-    src: "./brands/forbes.svg",
-    link: "",
-  },
-  {
-    id: 3,
-    name: "thought catalog",
-    src: "./brands/th_catalog.svg",
-    link: "",
-  },
-  {
-    id: 4,
-    name: "women's health",
-    src: "./brands/wh.svg",
-    link: "",
-  },
-  {
-    id: 5,
-    name: "wwd",
-    src: "./brands/wwd.svg",
-    link: "",
-  },
-];
+import BrandsSection from "../../../components/sections/BrandsSection";
 
 const PRODUCTS_DATA = [
   {
@@ -183,26 +151,7 @@ export default function Home() {
       <FeaturesSection />
       <BestProductsSection />
       <AboutSection />
-      <section className={styles.brands}>
-        <Container>
-          <Typography className={styles.brandsTitle} as="h2">
-            As&nbsp;seen&nbsp;in
-          </Typography>
-          <ul className={styles.brandsList}>
-            {BRANDS_DATA.map((elem) => (
-              <li key={elem.id}>
-                <a href={elem.link}>
-                  <img
-                    className={styles.brandsImg}
-                    src={elem.src}
-                    alt={elem.name}
-                  />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </section>
+      <BrandsSection />
       <section className={styles.processing}>
         <Container>
           <a href="#" className={styles.processingLink}>

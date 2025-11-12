@@ -1,22 +1,3 @@
-.brands {
-  padding: 96px 0;
-
-  &Title {
-    margin-bottom: 40px;
-  }
-
-  &List {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-  }
-
-  &Img {
-    max-width: 100%;
-  }
-}
-
 .processing {
   background-color: var(--color-green-title);
 
