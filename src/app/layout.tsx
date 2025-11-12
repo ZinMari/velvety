@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "../../ui/Header";
-import Container from "../../ui/Container";
-import Footer from "../../ui/Footer";
+import Header from "../../components/ui/Header";
+import Container from "../../components/ui/Container";
+import Footer from "../../components/ui/Footer";
 
 export const metadata: Metadata = {
   title: "VELVETY",

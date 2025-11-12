@@ -1,5 +1,5 @@
-import Container from "../../../ui/Container";
-import Typography from "../../../ui/Typography";
+import Container from "../../../components/ui/Container";
+import Typography from "../../../components/ui/Typography";
 import {
   IconArrow,
   IconFace,
@@ -8,17 +8,17 @@ import {
   IconPeople,
   IconSerum,
   IconSuitable,
-} from "../../../ui/Icons";
+} from "../../../components/ui/Icons";
 
 import styles from "./page.module.scss";
 import clsx from "clsx";
-import Button from "../../../ui/Button";
-import ProductCard from "../../../ui/ProductCard";
-import CategoriesButton from "../../../ui/CategoriesButton";
-import ActionCard from "../../../ui/ActionCard";
-import Slider from "../../../ui/Slider";
-import StarRating from "../../../ui/StarRating";
-import Review from "../../../ui/Review";
+import Button from "../../../components/ui/Button";
+import ProductCard from "../../../components/ui/ProductCard";
+import CategoriesButton from "../../../components/ui/CategoriesButton";
+import ActionCard from "../../../components/ui/ActionCard";
+import Slider from "../../../components/ui/Slider";
+import StarRating from "../../../components/ui/StarRating";
+import Review from "../../../components/ui/Review";
 
 const FEATURES_DATA = [
   {
