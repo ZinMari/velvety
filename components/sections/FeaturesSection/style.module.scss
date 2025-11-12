@@ -1,0 +1,94 @@
+.features {
+  display: flex;
+  background: linear-gradient(to right, #f2f6ef 50.01%, #e4ece0 50.01% 100%);
+  padding-top: 98px;
+  border-bottom: var(--border);
+
+  &Container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &Left {
+    padding-right: 10px;
+  }
+
+  &Title {
+    overflow: hidden;
+
+    &Line {
+      position: relative;
+      display: block;
+      animation: featuresTitle 2s infinite cubic-bezier(0.175, 0.885, 0.32, 1.1);
+
+      &First {
+        top: 200px;
+      }
+
+      &Second {
+        top: 300px;
+      }
+    }
+  }
+
+  &Image {
+    max-width: 570px;
+    position: relative;
+    top: 50px;
+  }
+
+  &Img {
+    max-width: 100%;
+  }
+
+  .list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+    padding-left: 56px;
+
+    &Item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      overflow: hidden;
+      padding-bottom: 10px;
+
+      &::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        bottom: 0px;
+        background-color: var(--color-green-dark);
+        width: 100%;
+        animation: featuresLine 2s var(--animation-delay);
+        left: -100%;
+      }
+    }
+
+    &Title {
+      margin-bottom: 8px;
+    }
+
+    &Img {
+      min-width: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+@keyframes featuresLine {
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes featuresTitle {
+  100% {
+    top: 0;
+  }
+}

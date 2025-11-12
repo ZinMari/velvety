@@ -4,10 +4,7 @@ import {
   IconArrow,
   IconFace,
   IconGift,
-  IconOrganic,
   IconPeople,
-  IconSerum,
-  IconSuitable,
 } from "../../../components/ui/Icons";
 
 import styles from "./page.module.scss";
@@ -19,27 +16,7 @@ import ActionCard from "../../../components/ui/ActionCard";
 import Slider from "../../../components/ui/Slider";
 import Review from "../../../components/ui/Review";
 import HeroSection from "../../../components/sections/HeroSection";
-
-const FEATURES_DATA = [
-  {
-    id: 1,
-    title: "100% Organic",
-    text: "We craft skincare using the most exquisite ingredients from the plant, earth and mineral realms.",
-    icon: IconOrganic,
-  },
-  {
-    id: 2,
-    title: "Fits your skin",
-    text: "I’ts all natural and processed based on traditional knowledge with modern technology.",
-    icon: IconSuitable,
-  },
-  {
-    id: 3,
-    title: "Easy to use",
-    text: "Packed with a unique design as well as usefull that can help you perform routine skin care.",
-    icon: IconSerum,
-  },
-];
+import FeaturesSection from "../../../components/sections/FeaturesSection";
 
 const BRANDS_DATA = [
   {
@@ -201,58 +178,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <HeroSection />
-      <section className={styles.features}>
-        <Container className={styles.featuresContainer}>
-          <div className={styles.featuresLeft}>
-            <Typography as="h3" className={styles.featuresTitle}>
-              <span
-                className={clsx(
-                  styles.featuresTitleLineFirst,
-                  styles.featuresTitleLine
-                )}
-              >
-                Inspired by&nbsp;traditional
-              </span>
-              <span
-                className={clsx(
-                  styles.featuresTitleLineSecond,
-                  styles.featuresTitleLine
-                )}
-              >
-                knowledge and nature
-              </span>
-            </Typography>
-            <div className={styles.featuresImage}>
-              <img className={styles.featuresImg} src="./features.png" alt="" />
-            </div>
-          </div>
-          <div className={styles.featuresRight}>
-            <ul className={clsx(styles.featuresList, styles.list)}>
-              {FEATURES_DATA.map((elem) => (
-                <li
-                  key={elem.id}
-                  className={styles.listItem}
-                  style={
-                    {
-                      "--animation-delay": `${elem.id * 0.15}s`,
-                    } as React.CSSProperties
-                  }
-                >
-                  <div className={styles.listImg}>
-                    <elem.icon />
-                  </div>
-                  <div className={styles.listInfo}>
-                    <Typography className={styles.listTitle} as="h4">
-                      {elem.title}
-                    </Typography>
-                    <Typography as="p">{elem.text}</Typography>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Container>
-      </section>
+      <FeaturesSection />
       <section className={styles.bestProducts}>
         <div className={styles.bestProductsTitle}>
           <Typography as="h2">Our featured products</Typography>
