@@ -17,6 +17,7 @@ import Slider from "../../../components/ui/Slider";
 import Review from "../../../components/ui/Review";
 import HeroSection from "../../../components/sections/HeroSection";
 import FeaturesSection from "../../../components/sections/FeaturesSection";
+import BestProducts from "../../../components/sections/BestProductsSection";
 
 const BRANDS_DATA = [
   {
@@ -179,37 +180,7 @@ export default function Home() {
     <main className={styles.main}>
       <HeroSection />
       <FeaturesSection />
-      <section className={styles.bestProducts}>
-        <div className={styles.bestProductsTitle}>
-          <Typography as="h2">Our featured products</Typography>
-          <Typography as="h3" className={styles.bestProductsSubTitle}>
-            Facial and skincare, natural and certified organic
-          </Typography>
-        </div>
-        <div className={styles.bestProductsProducts}>
-          <div className={styles.bestProductsContainer}>
-            <ul className={styles.bestProductsList}>
-              {PRODUCTS_DATA.filter((e) => e.isBestProduct).map(
-                (product, index) => {
-                  const backgroundType = index % 2 ? "ellipse" : "square";
-
-                  return (
-                    <li className={styles.bestProductsItem} key={product.id}>
-                      <ProductCard
-                        backgroundType={backgroundType}
-                        productName={product.name}
-                        price={product.price}
-                        rating={product.rating}
-                        productImg={product.src}
-                      />
-                    </li>
-                  );
-                }
-              )}
-            </ul>
-          </div>
-        </div>
-      </section>
+      <BestProducts />
       <section className={styles.about}>
         <Container className={styles.aboutContainer}>
           <div className={styles.aboutTitles}>
