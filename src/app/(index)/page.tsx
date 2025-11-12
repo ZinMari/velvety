@@ -202,7 +202,12 @@ export default function Home() {
     <main className={styles.main}>
       <section className={styles.hero}>
         <div className={styles.heroLeft}></div>
-        <div className={styles.heroRight}></div>
+        <div className={styles.heroRight}>
+          <Typography as="h1">
+            Let nature take care of&nbsp;your body and soul
+          </Typography>
+          <Button>Shop now</Button>
+        </div>
       </section>
       <section className={styles.features}>
         <Container className={styles.featuresContainer}>
