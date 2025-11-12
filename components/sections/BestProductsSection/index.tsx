@@ -54,7 +54,7 @@ const PRODUCTS_DATA = [
   },
 ];
 
-const BestProducts: React.FC = () => {
+const BestProductsSection: React.FC = () => {
   return (
     <section className={styles.bestProducts}>
       <div className={styles.bestProductsTitle}>
@@ -90,4 +90,4 @@ const BestProducts: React.FC = () => {
   );
 };
 
-export default BestProducts;
+export default BestProductsSection;

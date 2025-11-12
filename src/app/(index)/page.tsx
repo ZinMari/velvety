@@ -17,7 +17,8 @@ import Slider from "../../../components/ui/Slider";
 import Review from "../../../components/ui/Review";
 import HeroSection from "../../../components/sections/HeroSection";
 import FeaturesSection from "../../../components/sections/FeaturesSection";
-import BestProducts from "../../../components/sections/BestProductsSection";
+import BestProductsSection from "../../../components/sections/BestProductsSection";
+import AboutSection from "../../../components/sections/AboutSecton";
 
 const BRANDS_DATA = [
   {
@@ -180,32 +181,8 @@ export default function Home() {
     <main className={styles.main}>
       <HeroSection />
       <FeaturesSection />
-      <BestProducts />
-      <section className={styles.about}>
-        <Container className={styles.aboutContainer}>
-          <div className={styles.aboutTitles}>
-            <Typography className={styles.aboutTitle} as="h2">
-              About&nbsp;us
-            </Typography>
-            <Typography as="h3">Velvety facial and skincare company</Typography>
-          </div>
-          <div className={styles.aboutInfo}>
-            <Typography as="p">
-              Velvety is&nbsp;an&nbsp;indigenous company that specializes
-              in&nbsp;the manufacture and development of&nbsp;facial and
-              skincare products using the medicinal properties of&nbsp;the
-              traditional First Nations pharmacopoeia, with a&nbsp;concern for
-              sustainable development.
-            </Typography>
-            <Typography as="p">
-              The products offered, whose benefits have been scientifically
-              confirmed, are 100% natural and allow you to&nbsp;take care
-              of&nbsp;your body and mind: calming teas, energizing infusions,
-              anti-inflammatory essential oils, anti-age soaps and creams, etc.
-            </Typography>
-          </div>
-        </Container>
-      </section>
+      <BestProductsSection />
+      <AboutSection />
       <section className={styles.brands}>
         <Container>
           <Typography className={styles.brandsTitle} as="h2">
