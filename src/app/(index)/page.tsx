@@ -17,8 +17,8 @@ import ProductCard from "../../../components/ui/ProductCard";
 import CategoriesButton from "../../../components/ui/CategoriesButton";
 import ActionCard from "../../../components/ui/ActionCard";
 import Slider from "../../../components/ui/Slider";
-import StarRating from "../../../components/ui/StarRating";
 import Review from "../../../components/ui/Review";
+import HeroSection from "../../../components/sections/HeroSection";
 
 const FEATURES_DATA = [
   {
@@ -200,15 +200,7 @@ const renderReviewsArray = () => {
 export default function Home() {
   return (
     <main className={styles.main}>
-      <section className={styles.hero}>
-        <div className={styles.heroLeft}></div>
-        <div className={styles.heroRight}>
-          <Typography as="h1">
-            Let nature take care of&nbsp;your body and soul
-          </Typography>
-          <Button>Shop now</Button>
-        </div>
-      </section>
+      <HeroSection />
       <section className={styles.features}>
         <Container className={styles.featuresContainer}>
           <div className={styles.featuresLeft}>

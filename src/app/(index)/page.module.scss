@@ -1,22 +1,3 @@
-.hero {
-  height: 733px;
-  background-color: #899f87;
-  display: flex;
-
-  &Left {
-    width: 50%;
-  }
-
-  &Right {
-    width: 50%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5)),
-      url(../../../public/hero_bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
 .features {
   display: flex;
   background: linear-gradient(to right, #f2f6ef 50.01%, #e4ece0 50.01% 100%);
