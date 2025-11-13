@@ -1,5 +1,4 @@
 .hero {
-  height: 733px;
   background-color: #899f87;
   display: flex;
 
@@ -14,5 +13,21 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+  }
+
+  &Content {
+    position: relative;
+    left: -17%;
+    padding-top: 146px;
+    max-width: 806px;
+  }
+
+  &Title {
+    margin-bottom: 90px;
+  }
+
+  &Button {
+    width: 365px;
+    margin-bottom: 69px;
   }
 }
