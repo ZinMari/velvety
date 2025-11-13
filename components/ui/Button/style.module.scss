@@ -4,10 +4,14 @@
   justify-content: center;
   gap: 10px;
   background-color: var(--color-light);
-  border: 1px solid var(--color-green-dark);
   padding: 6px 32px;
   color: var(--color-green-dark);
   font-size: 16px;
   font-family: var(--font-aileron);
+  border: none;
   cursor: pointer;
+
+  &Border {
+    border: 1px solid var(--color-green-dark);
+  }
 }
