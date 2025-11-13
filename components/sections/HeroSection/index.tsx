@@ -14,7 +14,7 @@ const HeroSection: React.FC = () => {
           <Typography className={styles.heroTitle} as="h1">
             Let nature take care of&nbsp;your body and soul
           </Typography>
-          <Button className={styles.heroButton} isBorder={false}>
+          <Button className={styles.heroButton} isBorder={false} type="max">
             Shop now
           </Button>
         </div>

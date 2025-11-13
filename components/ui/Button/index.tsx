@@ -4,22 +4,25 @@ import styles from "./style.module.scss";
 import { IconArrow } from "../Icons";
 
 interface ButtonProps {
+  children: string;
   className?: string;
   isBorder?: boolean;
-  children: string;
+  type?: "min" | "max";
 }
 
 const Button: React.FC<ButtonProps> = ({
   className,
   children,
   isBorder = true,
+  type = "min",
 }) => {
   return (
     <button
       className={clsx(
         className,
         styles.button,
-        isBorder && styles.buttonBorder
+        isBorder && styles.buttonBorder,
+        type === "max" && styles.buttonMax
       )}
     >
       {children}
