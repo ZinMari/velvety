@@ -20,6 +20,7 @@ import FeaturesSection from "../../../components/sections/FeaturesSection";
 import BestProductsSection from "../../../components/sections/BestProductsSection";
 import AboutSection from "../../../components/sections/AboutSecton";
 import BrandsSection from "../../../components/sections/BrandsSection";
+import ProcessingSection from "../../../components/sections/ProcessingSection";
 
 const PRODUCTS_DATA = [
   {
@@ -152,16 +153,7 @@ export default function Home() {
       <BestProductsSection />
       <AboutSection />
       <BrandsSection />
-      <section className={styles.processing}>
-        <Container>
-          <a href="#" className={styles.processingLink}>
-            <h2 className={styles.processingTitle}>
-              Let&rsquo;s see the processing of&nbsp;our products
-            </h2>
-            <IconArrow className={styles.processingArrow} />
-          </a>
-        </Container>
-      </section>
+      <ProcessingSection />
       <section className={styles.diagnosis}>
         <Container className={styles.diagnosisContainer}>
           <div className={styles.diagnosisImage}>

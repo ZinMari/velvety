@@ -1,33 +1,3 @@
-.processing {
-  background-color: var(--color-green-title);
-
-  &Link {
-    padding: 40px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-
-    &:hover {
-      .processingArrow {
-        transform: scale(1.5);
-        transition: 0.8s;
-      }
-    }
-  }
-
-  &Title {
-    font-family: var(--font-dihjauti);
-    font-size: 40px;
-    font-weight: 300;
-    color: var(--color-light);
-  }
-
-  &Arrow {
-    transition: 0.8s;
-  }
-}
-
 .diagnosis {
   padding: 96px 0;
   border-bottom: var(--border);
