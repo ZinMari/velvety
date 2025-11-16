@@ -21,6 +21,7 @@ import BestProductsSection from "../../../components/sections/BestProductsSectio
 import AboutSection from "../../../components/sections/AboutSecton";
 import BrandsSection from "../../../components/sections/BrandsSection";
 import ProcessingSection from "../../../components/sections/ProcessingSection";
+import DiagnosisSection from "../../../components/sections/DiagnosisSection";
 
 const PRODUCTS_DATA = [
   {
@@ -154,32 +155,7 @@ export default function Home() {
       <AboutSection />
       <BrandsSection />
       <ProcessingSection />
-      <section className={styles.diagnosis}>
-        <Container className={styles.diagnosisContainer}>
-          <div className={styles.diagnosisImage}>
-            <div className={styles.diagnosisImageWrap}>
-              <img
-                className={styles.diagnosisImg}
-                src="./diagnosis.svg"
-                alt="Outline of a face with flowers"
-              />
-            </div>
-          </div>
-          <div className={styles.diagnosisInfo}>
-            <Typography as="h2" className={styles.diagnosisTitle}>
-              Try Our Service
-            </Typography>
-            <Typography as="h3" className={styles.diagnosisSubtitle}>
-              Your skin diagnosis in 3&nbsp;minutes
-            </Typography>
-            <Typography as="p" className={styles.diagnosisText}>
-              Say hello to&nbsp;a&nbsp;more radiant, healthier you with
-              personalized skincare that&rsquo;s as&nbsp;unique as&nbsp;you are.
-            </Typography>
-            <Button>Start my&nbsp;diagnosis</Button>
-          </div>
-        </Container>
-      </section>
+      <DiagnosisSection />
       <section className={styles.allProducts}>
         <Container className={styles.allProductsContainer}>
           <div className={styles.allProductsLeft}>

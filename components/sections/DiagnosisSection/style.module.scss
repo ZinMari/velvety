@@ -1,0 +1,39 @@
+.diagnosis {
+  padding: 96px 0;
+  border-bottom: var(--border);
+
+  &Container {
+    display: flex;
+  }
+
+  &Image {
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &ImageWrap {
+    max-width: 348px;
+  }
+
+  &Img {
+    margin-top: -45px;
+    max-width: 100%;
+  }
+
+  &Info {
+    max-width: 530px;
+  }
+
+  &Title {
+    margin-bottom: 19px;
+  }
+
+  &Subtitle {
+    margin-bottom: 10px;
+  }
+
+  &Text {
+    margin-bottom: 30px;
+  }
+}
