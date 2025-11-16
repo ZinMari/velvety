@@ -1,7 +1,6 @@
 import Container from "../../ui/Container";
 import Typography from "../../ui/Typography";
 import styles from "./style.module.scss";
-import clsx from "clsx";
 
 const BRANDS_DATA = [
   {
