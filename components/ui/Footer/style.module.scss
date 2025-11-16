@@ -10,6 +10,7 @@
   }
 
   &Address {
+    padding-top: 62px;
     border-right: var(--border);
     text-align: center;
     font-weight: 400;
@@ -43,6 +44,7 @@
     }
 
     &Column {
+      padding-top: 56px;
       padding-bottom: 40px;
 
       &:not(:last-child) {
