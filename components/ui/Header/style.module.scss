@@ -7,6 +7,10 @@
   text-transform: uppercase;
 
   &Menu {
-    width: 50%;
+  }
+
+  &UserPanel {
+    display: flex;
+    gap: 48px;
   }
 }

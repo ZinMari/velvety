@@ -3,6 +3,8 @@ import Logo from "../Logo";
 
 import styles from "./style.module.scss";
 import Menu from "../Menu";
+import MenuLink from "../MenuLink";
+import Link from "next/link";
 
 interface HeaderProps {
   className?: string;
@@ -16,6 +18,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       </div>
       <div className={styles.headerMenu}>
         <Menu />
+      </div>
+      <div className={styles.headerUserPanel}>
+        <Link href={"#"}>Login</Link>
+        <Link href={"#"}>Cart(0)</Link>
       </div>
     </header>
   );
