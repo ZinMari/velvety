@@ -6,17 +6,7 @@
   color: var(--color-light);
   text-transform: uppercase;
 
-  &Logo {
-  }
-
-  &Nav {
+  &Menu {
     width: 50%;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &List {
-    display: flex;
-    gap: 48px;
   }
 }

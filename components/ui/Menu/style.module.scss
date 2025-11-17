@@ -1,0 +1,10 @@
+.menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  &List {
+    display: flex;
+    gap: 48px;
+  }
+}
