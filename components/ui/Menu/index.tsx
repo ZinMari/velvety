@@ -9,96 +9,96 @@ const MENU_DATA = [
   [
     {
       id: 1,
-      title: "Pages",
+      name: "Pages",
       url: "/",
       children: [
         {
           id: 11,
-          title: "Home",
+          name: "Home",
           url: "/",
           children: null,
         },
         {
           id: 12,
-          title: "About",
+          name: "About",
           url: "/",
           children: null,
         },
         {
           id: 13,
-          title: "Shop",
+          name: "Shop",
           url: "/",
           children: null,
         },
         {
           id: 14,
-          title: "Product Details",
+          name: "Product Details",
           url: "/",
           children: null,
         },
         {
           id: 15,
-          title: "Checkout",
+          name: "Checkout",
           url: "/",
           children: null,
         },
         {
           id: 16,
-          title: "Checkout Paypal",
+          name: "Checkout Paypal",
           url: "/",
           children: null,
         },
         {
           id: 17,
-          title: "Blog",
+          name: "Blog",
           url: "/",
           children: null,
         },
         {
           id: 18,
-          title: "Blog Detail",
+          name: "Blog Detail",
           url: "/",
           children: null,
         },
         {
           id: 19,
-          title: "Order Confirmation",
+          name: "Order Confirmation",
           url: "/",
           children: null,
         },
         {
           id: 110,
-          title: "Licenses",
+          name: "Licenses",
           url: "/",
           children: null,
         },
         {
           id: 111,
-          title: "Changelog",
+          name: "Changelog",
           url: "/",
           children: null,
         },
         {
           id: 112,
-          title: "Contact Us",
+          name: "Contact Us",
           url: "/",
           children: null,
         },
         {
           id: 113,
-          title: "404",
+          name: "404",
           url: "/",
           children: null,
         },
         {
           id: 114,
-          title: "401",
+          name: "401",
           url: "/",
           children: null,
         },
         {
           id: 115,
-          title: "Styleguide",
+          name: "Styleguide",
           url: "/",
           children: null,
         },
@@ -106,27 +106,13 @@ const MENU_DATA = [
     },
     {
       id: 2,
-      title: "Shop",
+      name: "Shop",
       url: "/",
       children: null,
     },
     {
       id: 3,
-      title: "About",
-      url: "/",
-      children: null,
-    },
-  ],
-  [
-    {
-      id: 4,
-      title: "Login",
-      url: "/",
-      children: null,
-    },
-    {
-      id: 5,
-      title: "Cart(0)",
+      name: "About",
       url: "/",
       children: null,
     },
@@ -140,7 +126,7 @@ const Menu: React.FC<MenuProps> = ({ className }) => {
         <ul className={styles.menuList} key={index}>
           {menu.map((item) => (
             <li key={item.id}>
-              <a href="#">{item.title}</a>
+              <a href="#">{item.name}</a>
             </li>
           ))}
         </ul>
