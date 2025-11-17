@@ -3,14 +3,14 @@ import styles from "./style.module.scss";
 
 import Link from "next/link";
 
-interface MenuLinkProps {
+interface MenuItemProps {
   children: string;
   url: string;
   className?: string;
   isSubMenu?: boolean;
 }
 
-const MenuLink: React.FC<MenuLinkProps> = ({
+const MenuItem: React.FC<MenuItemProps> = ({
   className,
   url,
   children,
@@ -24,4 +24,4 @@ const MenuLink: React.FC<MenuLinkProps> = ({
   );
 };
 
-export default MenuLink;
+export default MenuItem;

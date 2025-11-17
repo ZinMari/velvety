@@ -3,7 +3,7 @@ import Logo from "../Logo";
 
 import styles from "./style.module.scss";
 import Menu from "../Menu";
-import MenuLink from "../MenuLink";
+import MenuLink from "../MenuItem";
 import Link from "next/link";
 
 interface HeaderProps {
