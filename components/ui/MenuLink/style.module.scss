@@ -1,0 +1,18 @@
+.menuLink {
+  display: inline-flex;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-light);
+  text-transform: uppercase;
+
+  &Mark {
+    width: 12px;
+    height: 12px;
+    border-width: 0 1px 1px 0;
+    border-color: var(--color-light);
+    border-style: solid;
+    rotate: 45deg;
+    border-radius: 0 0 2px 0;
+  }
+}
