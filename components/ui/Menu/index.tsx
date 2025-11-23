@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import styles from "./style.module.scss";
+import MenuItem from "../MenuItem";
 
 interface MenuProps {
   className?: string;
@@ -125,9 +126,9 @@ const Menu: React.FC<MenuProps> = ({ className }) => {
       {MENU_DATA.map((menu, index) => (
         <ul className={styles.menuList} key={index}>
           {menu.map((item) => (
-            <li key={item.id}>
-              <a href="#">{item.name}</a>
-            </li>
+            <MenuItem url="#" key={item.id} isSubMenu={Boolean(item.children)}>
+              {item.name}
+            </MenuItem>
           ))}
         </ul>
       ))}

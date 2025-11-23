@@ -17,10 +17,12 @@ const MenuItem: React.FC<MenuItemProps> = ({
   isSubMenu = false,
 }) => {
   return (
-    <Link href={url} className={cl(styles.menuLink, className)}>
-      {children}
-      {isSubMenu && <span className={styles.menuLinkMark}></span>}
-    </Link>
+    <li className={className}>
+      <Link href={url} className={styles.menuLink}>
+        {children}
+        {isSubMenu && <span className={styles.menuLinkMark}></span>}
+      </Link>
+    </li>
   );
 };
 
