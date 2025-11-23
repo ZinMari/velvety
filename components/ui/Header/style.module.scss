@@ -6,6 +6,12 @@
   color: var(--color-light);
   text-transform: uppercase;
 
+  &RightWrap {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+  }
+
   &Menu {
   }
 

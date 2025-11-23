@@ -16,12 +16,14 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       <div className={styles.headerLogo}>
         <Logo />
       </div>
-      <div className={styles.headerMenu}>
-        <Menu />
-      </div>
-      <div className={styles.headerUserPanel}>
-        <Link href={"#"}>Login</Link>
-        <Link href={"#"}>Cart(0)</Link>
+      <div className={styles.headerRightWrap}>
+        <div className={styles.headerMenu}>
+          <Menu />
+        </div>
+        <div className={styles.headerUserPanel}>
+          <Link href={"#"}>Login</Link>
+          <Link href={"#"}>Cart(0)</Link>
+        </div>
       </div>
     </header>
   );
