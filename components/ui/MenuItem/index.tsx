@@ -1,26 +1,26 @@
-import cl from "clsx";
 import styles from "./style.module.scss";
 
 import Link from "next/link";
+import { TMenuItem } from "../Menu";
 
 interface MenuItemProps {
-  children: string;
-  url: string;
   className?: string;
-  isSubMenu?: boolean;
+  label: string;
+  url: string;
+  children: null | TMenuItem[];
 }
 
 const MenuItem: React.FC<MenuItemProps> = ({
   className,
   url,
   children,
-  isSubMenu = false,
+  label,
 }) => {
   return (
     <li className={className}>
       <Link href={url} className={styles.menuLink}>
-        {children}
-        {isSubMenu && <span className={styles.menuLinkMark}></span>}
+        {label}
+        {children && <span className={styles.menuLinkMark}></span>}
       </Link>
     </li>
   );
