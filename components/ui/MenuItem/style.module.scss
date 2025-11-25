@@ -6,6 +6,8 @@
     font-weight: 400;
     color: var(--color-light);
     text-transform: uppercase;
+    background: transparent;
+    border: none;
     cursor: pointer;
   }
 
@@ -20,6 +22,7 @@
   }
 
   &Dropdown {
+    background-color: #fff;
     position: absolute;
   }
 }

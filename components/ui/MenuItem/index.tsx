@@ -1,7 +1,16 @@
-import styles from "./style.module.scss";
+"use client";
 
 import Link from "next/link";
 import { TMenuItem } from "../Menu";
+import {
+  Button,
+  Disclosure,
+  DisclosurePanel,
+  Heading,
+} from "react-aria-components";
+
+import cl from "clsx";
+import styles from "./style.module.scss";
 
 interface MenuItemProps {
   className?: string;
@@ -17,15 +26,18 @@ const MenuItem: React.FC<MenuItemProps> = ({
   label,
 }) => {
   return (
-    <li className={className}>
-      <div className={styles.menuItemContent}>
+    <li className={cl(styles.menuItem, className)}>
+      {children ? (
+        <Disclosure>
+          <Button slot="trigger">System Requirements</Button>
+          <DisclosurePanel className={cl(styles.menuItemDropdown)}>
+            Details about system requirements here.
+          </DisclosurePanel>
+        </Disclosure>
+      ) : (
         <Link href={url} className={styles.menuItemLink}>
           {label}
-          {children && <span className={styles.menuItemMark}></span>}
         </Link>
-      </div>
-      {children && (
-        <div className={styles.menuItemDropdown}>1111111111111111111111111</div>
       )}
     </li>
   );
