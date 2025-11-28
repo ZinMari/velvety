@@ -9,6 +9,13 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    padding: 28px 0;
+  }
+
+  &Content {
+    &:hover ~ .menuItemDropdown {
+      visibility: visible;
+    }
   }
 
   &Mark {
@@ -22,6 +29,7 @@
   }
 
   &Dropdown {
+    visibility: hidden;
     background-color: var(--color-light);
     position: absolute;
     display: flex;
