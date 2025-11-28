@@ -20,8 +20,12 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           <Menu />
         </div>
         <div className={styles.headerUserPanel}>
-          <Link href={"#"}>Login</Link>
-          <Link href={"#"}>Cart(0)</Link>
+          <Link className={styles.headerUserPanelLink} href={"#"}>
+            Login
+          </Link>
+          <Link className={styles.headerUserPanelLink} href={"#"}>
+            Cart(0)
+          </Link>
         </div>
       </div>
     </header>
