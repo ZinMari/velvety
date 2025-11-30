@@ -26,7 +26,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
         <span
           className={cl(
             className,
-            styles.dropdownMark,
+            styles.dropdownButtonMark,
             open && styles.dropdownMarkOpen
           )}
         ></span>
