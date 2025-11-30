@@ -20,6 +20,12 @@
     }
   }
 
+  &Menu {
+    @include media(min-tab) {
+      display: none;
+    }
+  }
+
   &UserPanel {
     display: flex;
     gap: 48px;

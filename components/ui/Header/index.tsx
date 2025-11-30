@@ -4,6 +4,7 @@ import Logo from "../Logo";
 import styles from "./style.module.scss";
 import Menu from "../Menu";
 import Link from "next/link";
+import Burger from "../Burger";
 
 interface HeaderProps {
   className?: string;
@@ -30,6 +31,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             Cart(0)
           </Link>
         </div>
+        <Burger />
       </div>
     </header>
   );
