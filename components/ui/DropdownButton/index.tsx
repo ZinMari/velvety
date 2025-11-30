@@ -1,5 +1,8 @@
 import React from "react";
-import Dropdown, { DropdownContext } from "../Dropdown";
+import { DropdownContext } from "../Dropdown";
+
+import cl from "clsx";
+import styles from "./style.module.scss";
 
 interface DropdownButtonProps {
   className?: string;
@@ -17,8 +20,17 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
   }
 
   return (
-    <button onClick={toggleOpen} className={className}>
+    <button onClick={toggleOpen} className={cl(styles.dropdown, className)}>
       {children}
+      {
+        <span
+          className={cl(
+            className,
+            styles.dropdownMark,
+            open && styles.dropdownMarkOpen
+          )}
+        ></span>
+      }
     </button>
   );
 };

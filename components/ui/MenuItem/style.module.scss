@@ -9,23 +9,12 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 28px 0;
   }
 
   &Content {
     &:hover ~ .menuItemDropdown {
       visibility: visible;
     }
-  }
-
-  &Mark {
-    width: 12px;
-    height: 12px;
-    border-width: 0 1px 1px 0;
-    border-color: var(--color-light);
-    border-style: solid;
-    rotate: 45deg;
-    border-radius: 0 0 2px 0;
   }
 
   &Dropdown {

@@ -20,13 +20,15 @@ const MenuItem: React.FC<MenuItemProps> = ({
 }) => {
   return (
     <li className={cl(styles.menuItem, className)}>
-      <div className={styles.menuItemContent}>
+      {children ? (
+        <Dropdown className={styles.menuItemLink} label={label}>
+          {children}
+        </Dropdown>
+      ) : (
         <Link href={url} className={styles.menuItemLink}>
           {label}
-          {children && <span className={styles.menuItemMark}></span>}
         </Link>
-      </div>
-      {children && <Dropdown className={styles.menuItemDropdown}></Dropdown>}
+      )}
     </li>
   );
 };
