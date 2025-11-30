@@ -6,10 +6,10 @@
   padding: 0 78px;
 
   @include media(screen) {
-    padding: 30px;
+    padding: 0 30px;
   }
 
   @include media(smart) {
-    padding: 10px;
+    padding: 0 10px;
   }
 }
