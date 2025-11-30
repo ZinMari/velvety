@@ -1,0 +1,23 @@
+@mixin media($breakpoint) {
+  @if $breakpoint == screen {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 991px) {
+      @content;
+    }
+  } @else if $breakpoint == min-tab {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $breakpoint == smart {
+    @media (max-width: 575px) {
+      @content;
+    }
+  } @else if $breakpoint == min-smart {
+    @media (max-width: 374px) {
+      @content;
+    }
+  }
+}

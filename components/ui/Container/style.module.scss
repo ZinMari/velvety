@@ -1,5 +1,15 @@
+@use "../../../src/app/mixins.scss" as *;
+
 .container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 78px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 78px;
+
+  @include media(screen) {
+    padding: 30px;
+  }
+
+  @include media(smart) {
+    padding: 10px;
+  }
 }
