@@ -10,34 +10,4 @@
     border: none;
     cursor: pointer;
   }
-
-  &Content {
-    &:hover ~ .menuItemDropdown {
-      visibility: visible;
-    }
-  }
-
-  &Dropdown {
-    visibility: hidden;
-    background-color: var(--color-light);
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    column-gap: 24px;
-    height: 384px;
-    flex-wrap: wrap;
-
-    &Link {
-      color: var(--color-green-middle);
-      text-transform: capitalize;
-      padding: 12px;
-
-      &:hover {
-        background-color: var(--color-green-light);
-        color: var(--color-green-dark);
-        -webkit-text-stroke: 0.5px var(--color-green-dark);
-        text-stroke: 0.5px var(--color-green-dark);
-      }
-    }
-  }
 }

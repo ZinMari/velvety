@@ -3,6 +3,9 @@
 import React from "react";
 import DropdownButton from "../DropdownButton";
 import { TMenuItem } from "../Menu";
+import DropdownContent from "../DropdownContent";
+
+import styles from "./style.module.scss";
 
 interface DropdownProps {
   className?: string;
@@ -20,8 +23,10 @@ const Dropdown: React.FC<DropdownProps> = ({ children, label, className }) => {
 
   return (
     <DropdownContext.Provider value={{ open, setOpen }}>
-      <DropdownButton className={className}>{label}</DropdownButton>
-      <div className="relative"></div>
+      <div className={styles.dropdown}>
+        <DropdownButton className={className}>{label}</DropdownButton>
+        <DropdownContent>{children}</DropdownContent>
+      </div>
     </DropdownContext.Provider>
   );
 };

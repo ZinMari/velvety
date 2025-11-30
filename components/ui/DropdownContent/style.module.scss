@@ -1,0 +1,35 @@
+.dropdownContent {
+  position: absolute;
+  visibility: hidden;
+  padding: 8px;
+  left: 50%;
+  translate: -50% 0;
+  background-color: var(--color-light);
+
+  &Open {
+    visibility: visible;
+  }
+
+  &List {
+    display: grid;
+    grid-template-rows: repeat(8, auto);
+    grid-auto-flow: column;
+    column-gap: 24px;
+    white-space: nowrap;
+  }
+
+  &Item {
+    height: 46px;
+    color: var(--color-green-middle);
+    text-transform: capitalize;
+    padding: 12px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-green-light);
+      color: var(--color-green-dark);
+      -webkit-text-stroke: 0.5px var(--color-green-dark);
+      text-stroke: 0.5px var(--color-green-dark);
+    }
+  }
+}
