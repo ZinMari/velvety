@@ -15,7 +15,7 @@ const DropdownContent: React.FC<DropdownContentProps> = ({
   className,
   children,
 }) => {
-  const { open } = React.useContext(DropdownContext);
+  const { open, setOpen } = React.useContext(DropdownContext);
 
   return (
     <div
@@ -23,7 +23,11 @@ const DropdownContent: React.FC<DropdownContentProps> = ({
     >
       <ul className={styles.dropdownContentList}>
         {children?.map(({ id, label, url }) => (
-          <li key={id} className={styles.dropdownContentItem}>
+          <li
+            onClick={() => setOpen(false)}
+            key={id}
+            className={styles.dropdownContentItem}
+          >
             <Link className={styles.dropdownContentLink} href={url}>
               {label}
             </Link>
