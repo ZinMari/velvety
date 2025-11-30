@@ -1,3 +1,5 @@
+@use "../../../src/app/mixins.scss" as *;
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -7,15 +9,37 @@
   text-transform: uppercase;
 
   &RightWrap {
-    // width: 50%;
+    width: 50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 48px;
+
+    @include media(tablet) {
+      width: auto;
+    }
   }
 
   &UserPanel {
     display: flex;
     gap: 48px;
+
+    @include media(min-tab) {
+      gap: 16px;
+    }
+
+    &Login {
+      @include media(min-tab) {
+        display: none;
+      }
+    }
+
+    &Shop {
+      display: none;
+
+      @include media(min-tab) {
+        display: block;
+      }
+    }
   }
 }
