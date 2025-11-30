@@ -1,10 +1,9 @@
-"use client";
-
 import Link from "next/link";
 import { TMenuItem } from "../Menu";
 
 import cl from "clsx";
 import styles from "./style.module.scss";
+import Dropdown from "../Dropdown";
 
 interface MenuItemProps {
   className?: string;
@@ -27,7 +26,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
           {children && <span className={styles.menuItemMark}></span>}
         </Link>
       </div>
-      {children && <div className={styles.menuItemDropdown}>drop</div>}
+      {children && <Dropdown className={styles.menuItemDropdown}></Dropdown>}
     </li>
   );
 };
