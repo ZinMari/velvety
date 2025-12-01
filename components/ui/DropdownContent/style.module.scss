@@ -1,3 +1,5 @@
+@use "../../../src/app/mixins.scss" as *;
+
 .dropdownContent {
   position: absolute;
   visibility: hidden;
@@ -7,8 +9,20 @@
   translate: -50% 0;
   background-color: var(--color-light);
 
+  @include media(min-tab) {
+    position: relative;
+    top: 32px;
+    height: 0;
+    background-color: transparent;
+    padding: 0;
+  }
+
   &Open {
     visibility: visible;
+
+    @include media(min-tab) {
+      height: 100%;
+    }
   }
 
   &List {
@@ -25,6 +39,10 @@
     text-transform: capitalize;
     padding: 12px;
     cursor: pointer;
+
+    @include media(min-tab) {
+      padding-left: 0;
+    }
 
     &:hover {
       background-color: var(--color-green-light);

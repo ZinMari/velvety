@@ -6,12 +6,23 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  height: 84px;
-  align-items: center;
-  color: var(--color-light);
-  text-transform: uppercase;
+
+  &Container {
+    display: flex;
+    justify-content: space-between;
+    height: 84px;
+    align-items: center;
+    color: var(--color-light);
+    text-transform: uppercase;
+  }
+
+  &Logo {
+    z-index: 200;
+
+    @include media(min-tab) {
+      color: var(--color-green-title);
+    }
+  }
 
   &RightWrap {
     width: 50%;
@@ -25,18 +36,14 @@
     }
   }
 
-  &Menu {
-    @include media(min-tab) {
-      position: absolute;
-    }
-  }
-
   &UserPanel {
     display: flex;
     gap: 48px;
+    z-index: 200;
 
     @include media(min-tab) {
       gap: 16px;
+      color: var(--color-green-title);
     }
 
     &Login {

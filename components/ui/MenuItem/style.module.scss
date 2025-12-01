@@ -1,3 +1,5 @@
+@use "../../../src/app/mixins.scss" as *;
+
 .menuItem {
   &Link {
     display: inline-flex;
@@ -9,5 +11,12 @@
     background: transparent;
     border: none;
     cursor: pointer;
+
+    @include media(min-tab) {
+      width: 100%;
+      font-size: 32px;
+      color: var(--color-green-dark);
+      justify-content: space-between;
+    }
   }
 }

@@ -1,3 +1,5 @@
+@use "../../../src/app/mixins.scss" as *;
+
 .dropdownButton {
   &Mark {
     width: 12px;
@@ -7,6 +9,13 @@
     border-style: solid;
     rotate: 45deg;
     border-radius: 0 0 2px 0;
+
+    @include media(min-tab) {
+      width: 26px;
+      height: 26px;
+      border-width: 0 3px 3px 0;
+      border-color: var(--color-green-dark);
+    }
 
     &Open {
       rotate: 225deg;
