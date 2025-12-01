@@ -1,7 +1,7 @@
 .typography {
   &H1 {
     font-weight: 300;
-    font-size: 108px;
+    font-size: clamp(48px, 26.8732px + 5.6338vw, 108px);
     line-height: 110%;
     color: var(--color-light);
   }
