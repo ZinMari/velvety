@@ -1,4 +1,5 @@
 .burger {
+  position: relative;
   width: 32px;
   height: 32px;
   display: flex;
@@ -8,14 +9,37 @@
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  z-index: 100;
+  transition: var(--transition-general);
 
-  &Wrap {
-    position: relative;
-    display: inline-block;
+  &Open {
+    background-color: var(--color-green-title);
+
+    .burgerLine {
+      background-color: var(--color-green-title);
+      transform: rotate(90deg);
+    }
+
+    .burgerLine::before {
+      background-color: var(--color-light);
+      top: 0;
+      transform: rotate(135deg);
+    }
+    .burgerLine::after {
+      background-color: var(--color-light);
+      top: 0;
+      transform: rotate(55deg);
+    }
+  }
+
+  &Line {
+    position: absolute;
+    display: block;
     width: 15px;
     height: 1.2px;
     background-color: var(--color-green-dark);
     border-radius: 2px;
+    transition: var(--transition-general);
 
     &::before,
     &::after {
@@ -26,6 +50,7 @@
       height: 100%;
       background-color: var(--color-green-dark);
       border-radius: 2px;
+      transition: var(--transition-general);
     }
 
     &::before {
