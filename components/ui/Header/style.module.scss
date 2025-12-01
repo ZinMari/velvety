@@ -18,9 +18,12 @@
 
   &Logo {
     z-index: 200;
+    transition: var(--transition-general);
 
-    @include media(min-tab) {
-      color: var(--color-green-title);
+    &Open {
+      @include media(min-tab) {
+        color: var(--color-green-title);
+      }
     }
   }
 

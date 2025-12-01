@@ -20,7 +20,12 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
     <header className={clsx(styles.header, className)}>
       <Container className={styles.headerContainer}>
-        <div className={styles.headerLogo}>
+        <div
+          className={clsx(
+            styles.headerLogo,
+            isMenuOpen && styles.headerLogoOpen
+          )}
+        >
           <Logo />
         </div>
         <div className={styles.headerRightWrap}>
