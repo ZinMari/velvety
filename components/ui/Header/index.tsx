@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import Logo from "../Logo";
 
@@ -5,12 +7,15 @@ import styles from "./style.module.scss";
 import Menu from "../Menu";
 import Link from "next/link";
 import Burger from "../Burger";
+import { useState } from "react";
 
 interface HeaderProps {
   className?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ className }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className={clsx(styles.header, className)}>
       <div className={styles.headerLogo}>
@@ -31,7 +36,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             Cart(0)
           </Link>
         </div>
-        <Burger />
+        <Burger
+          onClick={() => setIsMenuOpen((isMenuOpen) => !isMenuOpen)}
+          isOpen={isMenuOpen}
+        />
       </div>
     </header>
   );
