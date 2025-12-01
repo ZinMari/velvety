@@ -1,7 +1,7 @@
 .about {
   &Container {
-    padding-top: 96px;
-    padding-bottom: 96px;
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
     display: flex;
     border-bottom: var(--border);
     justify-content: space-between;
