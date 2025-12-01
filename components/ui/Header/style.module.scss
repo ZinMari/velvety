@@ -1,6 +1,11 @@
 @use "../../../src/app/mixins.scss" as *;
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   height: 84px;
@@ -22,7 +27,7 @@
 
   &Menu {
     @include media(min-tab) {
-      display: none;
+      position: absolute;
     }
   }
 
