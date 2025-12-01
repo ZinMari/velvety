@@ -46,7 +46,12 @@
 
     @include media(min-tab) {
       gap: 16px;
-      color: var(--color-green-title);
+    }
+
+    &Open {
+      @include media(min-tab) {
+        color: var(--color-green-title);
+      }
     }
 
     &Login {

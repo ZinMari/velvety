@@ -32,7 +32,12 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           <div className={styles.headerMenu}>
             <Menu isOpen={isMenuOpen} />
           </div>
-          <div className={styles.headerUserPanel}>
+          <div
+            className={clsx(
+              styles.headerUserPanel,
+              isMenuOpen && styles.headerUserPanelOpen
+            )}
+          >
             <Link className={styles.headerUserPanelShop} href={"#"}>
               Shop
             </Link>
