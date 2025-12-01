@@ -57,11 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={fontAileron.className}>
-        <div className="header">
-          <Container>
-            <Header />
-          </Container>
-        </div>
+        <Header />
         {children}
         <Footer />
       </body>
