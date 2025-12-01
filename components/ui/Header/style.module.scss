@@ -48,4 +48,12 @@
       }
     }
   }
+
+  &Burger {
+    display: none;
+
+    @include media(min-tab) {
+      display: block;
+    }
+  }
 }

@@ -36,10 +36,12 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             Cart(0)
           </Link>
         </div>
-        <Burger
-          onClick={() => setIsMenuOpen((isMenuOpen) => !isMenuOpen)}
-          isOpen={isMenuOpen}
-        />
+        <div className={styles.headerBurger}>
+          <Burger
+            onClick={() => setIsMenuOpen((isMenuOpen) => !isMenuOpen)}
+            isOpen={isMenuOpen}
+          />
+        </div>
       </div>
     </header>
   );

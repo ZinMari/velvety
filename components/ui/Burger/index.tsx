@@ -12,7 +12,6 @@ const Burger: React.FC<BurgerProps> = ({
   onClick,
   isOpen = false,
 }) => {
-  console.log(isOpen);
   return (
     <button
       onClick={onClick}
