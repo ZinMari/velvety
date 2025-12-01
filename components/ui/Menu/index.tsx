@@ -1,8 +1,11 @@
-import styles from "./style.module.scss";
 import MenuItem from "../MenuItem";
+
+import styles from "./style.module.scss";
+import cl from "clsx";
 
 interface MenuProps {
   className?: string;
+  isOpen?: boolean;
 }
 
 export type TMenuItem = {
@@ -124,9 +127,9 @@ const MENU_DATA: TMenuItem[] = [
   },
 ];
 
-const Menu: React.FC<MenuProps> = ({ className }) => {
+const Menu: React.FC<MenuProps> = ({ className, isOpen = false }) => {
   return (
-    <nav className={styles.menu}>
+    <nav className={cl(styles.menu, isOpen && styles.menuOpen, className)}>
       <ul className={styles.menuList}>
         {MENU_DATA.map(({ id, label, url, children }) => (
           <MenuItem key={id} {...{ label, url, children }} />

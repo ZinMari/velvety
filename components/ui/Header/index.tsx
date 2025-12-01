@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         </div>
         <div className={styles.headerRightWrap}>
           <div className={styles.headerMenu}>
-            <Menu />
+            <Menu isOpen={isMenuOpen} />
           </div>
           <div className={styles.headerUserPanel}>
             <Link className={styles.headerUserPanelShop} href={"#"}>
