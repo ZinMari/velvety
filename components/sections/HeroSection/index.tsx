@@ -6,18 +6,30 @@ import Button from "../../ui/Button";
 import Slider from "../../ui/Slider";
 import Container from "../../ui/Container";
 
-const SLIDER_ITEM = [
-  <img src="/products/chicori.png" />,
-  <img src="/products/holocena.png" />,
-];
+const PATHS_SLIDER_IMG = ["/products/chicori.png", "/products/holocena.png"];
+
+function renderSliderItems() {
+  return PATHS_SLIDER_IMG.map((path) => (
+    <div className={styles.heroSliderItem}>
+      <img className={styles.heroSliderImg} src={path} alt="" />
+    </div>
+  ));
+}
 
 const HeroSection: React.FC = () => {
   return (
     <section className={styles.hero}>
       <Container className={styles.heroContainer}>
-        <div className={styles.heroSlider}>
-          <Slider items={SLIDER_ITEM} arrowsLocation="left" />
+        <div className={styles.heroLeft}>
+          <div className={styles.heroSliderWrap}>
+            <Slider
+              className={styles.heroSlider}
+              items={renderSliderItems()}
+              arrowsLocation="left"
+            />
+          </div>
         </div>
+
         <div className={styles.heroContent}>
           <Typography className={styles.heroTitle} as="h1">
             Let nature take care of&nbsp;your body and soul

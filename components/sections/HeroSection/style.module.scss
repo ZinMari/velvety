@@ -24,15 +24,35 @@
     display: flex;
   }
 
-  &Slider {
+  &Left {
+    position: relative;
     flex-basis: 40%;
     flex-shrink: 0;
     min-width: 400px;
   }
 
+  &SliderWrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 300px;
+  }
+
+  &SliderImg {
+    width: 100%;
+  }
+
+  &Slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   &Content {
-    flex-basis: 60%;
     padding-top: 146px;
+    flex-basis: 60%;
   }
 
   &Title {
