@@ -29,7 +29,6 @@ const HeroSection: React.FC = () => {
             />
           </div>
         </div>
-
         <div className={styles.heroContent}>
           <Typography className={styles.heroTitle} as="h1">
             Let nature take care of&nbsp;your body and soul
