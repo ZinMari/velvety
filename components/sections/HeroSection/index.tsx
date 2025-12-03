@@ -13,20 +13,16 @@ const SLIDER_ITEM = [
 const HeroSection: React.FC = () => {
   return (
     <section className={styles.hero}>
-      <div className={styles.heroLeft}>
-        <div className={styles.heroSlider}>
-          <Slider items={SLIDER_ITEM} />
-        </div>
+      <div className={styles.heroSlider}>
+        <Slider items={SLIDER_ITEM} />
       </div>
-      <div className={styles.heroRight}>
-        <div className={styles.heroContent}>
-          <Typography className={styles.heroTitle} as="h1">
-            Let nature take care of&nbsp;your body and soul
-          </Typography>
-          <Button className={styles.heroButton} isBorder={false} type="max">
-            Shop now
-          </Button>
-        </div>
+      <div className={styles.heroContent}>
+        <Typography className={styles.heroTitle} as="h1">
+          Let nature take care of&nbsp;your body and soul
+        </Typography>
+        <Button className={styles.heroButton} isBorder={false} type="max">
+          Shop now
+        </Button>
       </div>
     </section>
   );

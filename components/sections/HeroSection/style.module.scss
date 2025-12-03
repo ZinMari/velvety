@@ -1,22 +1,22 @@
 .hero {
-  background-color: #899f87;
+  position: relative;
+  width: 100%;
+  background: var(--color-green-title);
   display: flex;
 
-  &Left {
+  &::before {
+    position: absolute;
+    content: "";
+    height: 100%;
     width: 50%;
+    top: 0;
+    right: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5)),
+      url(../../../public/hero_bg.jpg) no-repeat center/cover;
   }
 
   &Slider {
     max-width: 407px;
-  }
-
-  &Right {
-    width: 50%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5)),
-      url(../../../public/hero_bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
   }
 
   &Content {
