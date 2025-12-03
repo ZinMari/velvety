@@ -1,8 +1,11 @@
 .hero {
   position: relative;
   width: 100%;
-  background: var(--color-green-title);
-  display: flex;
+  background: linear-gradient(
+    90deg,
+    var(--color-green-title) 0 50.01%,
+    transparent 50% 100%
+  );
 
   &::before {
     position: absolute;
@@ -13,6 +16,12 @@
     right: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.5)),
       url(../../../public/hero_bg.jpg) no-repeat center/cover;
+    z-index: -1;
+    font-size: 0;
+  }
+
+  &Container {
+    display: flex;
   }
 
   &Slider {
@@ -20,8 +29,6 @@
   }
 
   &Content {
-    position: relative;
-    left: -17%;
     padding-top: 146px;
     max-width: 806px;
   }

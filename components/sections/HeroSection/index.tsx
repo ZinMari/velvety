@@ -4,6 +4,7 @@ import styles from "./style.module.scss";
 import Typography from "../../ui/Typography";
 import Button from "../../ui/Button";
 import Slider from "../../ui/Slider";
+import Container from "../../ui/Container";
 
 const SLIDER_ITEM = [
   <img src="/products/chicori.png" />,
@@ -13,17 +14,19 @@ const SLIDER_ITEM = [
 const HeroSection: React.FC = () => {
   return (
     <section className={styles.hero}>
-      <div className={styles.heroSlider}>
-        <Slider items={SLIDER_ITEM} />
-      </div>
-      <div className={styles.heroContent}>
-        <Typography className={styles.heroTitle} as="h1">
-          Let nature take care of&nbsp;your body and soul
-        </Typography>
-        <Button className={styles.heroButton} isBorder={false} type="max">
-          Shop now
-        </Button>
-      </div>
+      <Container className={styles.heroContainer}>
+        <div className={styles.heroSlider}>
+          <Slider items={SLIDER_ITEM} />
+        </div>
+        <div className={styles.heroContent}>
+          <Typography className={styles.heroTitle} as="h1">
+            Let nature take care of&nbsp;your body and soul
+          </Typography>
+          <Button className={styles.heroButton} isBorder={false} type="max">
+            Shop now
+          </Button>
+        </div>
+      </Container>
     </section>
   );
 };
