@@ -25,12 +25,14 @@
   }
 
   &Slider {
-    max-width: 407px;
+    flex-basis: 40%;
+    flex-shrink: 0;
+    min-width: 400px;
   }
 
   &Content {
+    flex-basis: 60%;
     padding-top: 146px;
-    max-width: 806px;
   }
 
   &Title {
