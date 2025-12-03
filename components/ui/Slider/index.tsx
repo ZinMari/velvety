@@ -13,6 +13,7 @@ interface SliderProps {
   className?: string;
   autoPlay?: boolean;
   autoPlayTime?: number;
+  arrowsLocation?: "right" | "left";
 }
 
 const Slider: React.FC<SliderProps> = ({
@@ -20,6 +21,7 @@ const Slider: React.FC<SliderProps> = ({
   items,
   autoPlay = true,
   autoPlayTime = 1000,
+  arrowsLocation = "right",
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [touchPosition, setTouchPosition] = useState(null);
@@ -87,7 +89,13 @@ const Slider: React.FC<SliderProps> = ({
   // }, [currentImageIndex]);
 
   return (
-    <div className={cl(styles.slider, className)}>
+    <div
+      className={cl(
+        styles.slider,
+        className,
+        arrowsLocation === "left" && styles.sliderReverse
+      )}
+    >
       <div
         className={styles.sliderSlider}
         onTouchStart={handleTouchStart}

@@ -6,6 +6,16 @@
   grid-template-columns: 1fr 30px;
   gap: 60px;
 
+  &Reverse {
+    grid-template-columns: 30px 1fr;
+    .sliderSlider {
+      order: 1;
+    }
+    .sliderControls {
+      order: 0;
+    }
+  }
+
   &Slider {
     position: relative;
     width: 100%;

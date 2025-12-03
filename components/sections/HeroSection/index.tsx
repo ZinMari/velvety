@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
     <section className={styles.hero}>
       <Container className={styles.heroContainer}>
         <div className={styles.heroSlider}>
-          <Slider items={SLIDER_ITEM} />
+          <Slider items={SLIDER_ITEM} arrowsLocation="left" />
         </div>
         <div className={styles.heroContent}>
           <Typography className={styles.heroTitle} as="h1">
