@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Button from "../../ui/Button";
 import CategoriesButton from "../../ui/CategoriesButton";
 import Container from "../../ui/Container";
@@ -6,6 +9,25 @@ import Typography from "../../ui/Typography";
 
 import styles from "./style.module.scss";
 
+export type TCategories =
+  | "All needs"
+  | "Protect"
+  | "Regenerates"
+  | "Revitalizes"
+  | "Feeds"
+  | "Regulates"
+  | "Purifies"
+  | "Makeup Removal"
+  | "Exfoliate"
+  | "Antioxidant"
+  | "Soothes"
+  | "Smoothes skin texture"
+  | "Tones"
+  | "Anti-waste"
+  | "Hydrate"
+  | "Strengthens"
+  | "Regenerates after UV exposure Strengthens";
+
 type TProduct = {
   id: number;
   name: string;
@@ -13,6 +35,11 @@ type TProduct = {
   price: number;
   rating: number;
   isBestProduct: boolean;
+  category: TCategories;
+};
+
+type FilterObject = {
+  category: TCategories[];
 };
 
 const PRODUCTS_DATA: TProduct[] = [
@@ -23,6 +50,7 @@ const PRODUCTS_DATA: TProduct[] = [
     price: 20,
     rating: 4.0,
     isBestProduct: true,
+    category: "Protect",
   },
   {
     id: 2,
@@ -31,6 +59,7 @@ const PRODUCTS_DATA: TProduct[] = [
     price: 23,
     rating: 5.0,
     isBestProduct: true,
+    category: "Makeup Removal",
   },
   {
     id: 3,
@@ -39,6 +68,7 @@ const PRODUCTS_DATA: TProduct[] = [
     price: 20,
     rating: 5.0,
     isBestProduct: true,
+    category: "Anti-waste",
   },
   {
     id: 4,
@@ -47,6 +77,7 @@ const PRODUCTS_DATA: TProduct[] = [
     price: 20,
     rating: 5.0,
     isBestProduct: false,
+    category: "Exfoliate",
   },
   {
     id: 5,
@@ -55,6 +86,7 @@ const PRODUCTS_DATA: TProduct[] = [
     price: 12,
     rating: 4.5,
     isBestProduct: false,
+    category: "Revitalizes",
   },
   {
     id: 6,
@@ -63,10 +95,16 @@ const PRODUCTS_DATA: TProduct[] = [
     price: 22.5,
     rating: 5.0,
     isBestProduct: false,
+    category: "Regenerates",
   },
 ];
 
-const PRODUCT_CATEGORIES_DATA = [
+type TCategoriesItem = {
+  id: number;
+  name: TCategories;
+};
+
+const PRODUCT_CATEGORIES_DATA: TCategoriesItem[] = [
   { id: 1, name: "All needs" },
   { id: 2, name: "Protect" },
   { id: 3, name: "Regenerates" },
@@ -87,6 +125,44 @@ const PRODUCT_CATEGORIES_DATA = [
 ];
 
 const AllProductsSection: React.FC = () => {
+  //отфильтрованные данные
+  const [filterData, setFilterData] = useState<TProduct[]>([]);
+
+  const [filters, setFilters] = useState<FilterObject>({
+    category: ["All needs"],
+  });
+
+  //Функция фильтрации
+  const filterProducts = (filterObj: FilterObject) => {
+    return PRODUCTS_DATA.filter((item) => {
+      if (
+        filterObj.category.length === 0 ||
+        filterObj.category.includes("All needs")
+      ) {
+        return true;
+      }
+
+      return filterObj.category.includes(item.category);
+    });
+  };
+
+  useEffect(() => {
+    const data: TProduct[] = filterProducts(filters);
+    setFilterData(data);
+  }, [filters]);
+
+  const handleClick = (category: TCategories) => {
+    const currentFilters = filters.category;
+
+    if (!currentFilters.includes(category)) {
+      setFilters({ category: [category, ...currentFilters] });
+    } else {
+      setFilters({
+        category: currentFilters.filter((item) => item != category),
+      });
+    }
+  };
+
   return (
     <section className={styles.allProducts}>
       <Container className={styles.allProductsContainer}>
@@ -99,13 +175,21 @@ const AllProductsSection: React.FC = () => {
           </Typography>
           <ul className={styles.allProductsCategories}>
             {PRODUCT_CATEGORIES_DATA.map((e) => (
-              <li key={e.id}>{<CategoriesButton text={e.name} />}</li>
+              <li key={e.id}>
+                {
+                  <CategoriesButton
+                    isActive={filters.category.includes(e.name)}
+                    onClick={() => handleClick(e.name)}
+                    text={e.name}
+                  />
+                }
+              </li>
             ))}
           </ul>
         </div>
         <div className={styles.allProductsRight}>
           <ul className={styles.allProductsList}>
-            {PRODUCTS_DATA.slice(0, 4).map((e) => (
+            {filterData.slice(0, 4).map((e) => (
               <li className={styles.allProductsCard} key={e.id}>
                 <ProductCard
                   productName={e.name}
