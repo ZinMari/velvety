@@ -31,7 +31,7 @@ const PRODUCTS_DATA = [
   {
     id: 4,
     name: "classwing",
-    src: "./products/classwing_mini.png",
+    src: "./products/classwing.png",
     price: 20,
     rating: 5.0,
     isBestProduct: false,
@@ -39,7 +39,7 @@ const PRODUCTS_DATA = [
   {
     id: 5,
     name: "inamorata",
-    src: "./products/inamorata_mini.png",
+    src: "./products/inamorata.png",
     price: 12,
     rating: 4.5,
     isBestProduct: false,
@@ -47,7 +47,7 @@ const PRODUCTS_DATA = [
   {
     id: 6,
     name: "lightcool",
-    src: "./products/lightcool_mini.png",
+    src: "./products/lightcool.png",
     price: 22.5,
     rating: 5.0,
     isBestProduct: false,
@@ -69,7 +69,6 @@ const BestProductsSection: React.FC = () => {
             {PRODUCTS_DATA.filter((e) => e.isBestProduct).map(
               (product, index) => {
                 const backgroundType = index % 2 ? "ellipse" : "square";
-
                 return (
                   <li className={styles.bestProductsItem} key={product.id}>
                     <ProductCard

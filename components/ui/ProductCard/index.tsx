@@ -32,9 +32,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
       )}
     >
       <div
-        className={clsx(styles.productCardImage, {
-          [styles.productCardImageEllipse]: backgroundType === "ellipse",
-        })}
+        className={clsx(
+          styles.productCardImage,
+          backgroundType === "ellipse" && styles.productCardImageEllipse,
+          variant === "min" && styles.productCardImageMin
+        )}
       >
         <img
           className={styles.productCardImg}
