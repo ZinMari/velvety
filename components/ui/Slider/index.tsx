@@ -4,7 +4,6 @@ import cl from "clsx";
 
 import styles from "./style.module.scss";
 import { useEffect, useState } from "react";
-import { IconArrow } from "../Icons";
 import ArrowButton from "../ArrowButton";
 import Dot from "../Dot";
 
@@ -14,6 +13,7 @@ interface SliderProps {
   autoPlay?: boolean;
   autoPlayTime?: number;
   arrowsLocation?: "right" | "left";
+  controlsTheme?: "light" | "dark";
 }
 
 const Slider: React.FC<SliderProps> = ({
@@ -22,6 +22,7 @@ const Slider: React.FC<SliderProps> = ({
   autoPlay = true,
   autoPlayTime = 1000,
   arrowsLocation = "right",
+  controlsTheme = "dark",
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [touchPosition, setTouchPosition] = useState(null);
@@ -64,7 +65,7 @@ const Slider: React.FC<SliderProps> = ({
     setTouchPosition(null);
   };
 
-  const renderDots = () => {
+  const renderDots = (theme: "dark" | "light") => {
     const dots = [];
 
     for (let i = 0; i < items.length; i++) {
@@ -74,6 +75,7 @@ const Slider: React.FC<SliderProps> = ({
           number={i}
           onClick={handleDotClick}
           isActive={i === currentImageIndex}
+          theme={theme}
         />
       );
     }
@@ -112,10 +114,18 @@ const Slider: React.FC<SliderProps> = ({
           ))}
         </ul>
       </div>
-      <div className={styles.sliderControls}>
-        <ArrowButton onClick={handleNextClick} type="right" />
-        <div className={styles.sliderDots}>{renderDots()}</div>
-        <ArrowButton onClick={handlePreviousClick} type="left" />
+      <div className={cl(styles.sliderControls)}>
+        <ArrowButton
+          onClick={handleNextClick}
+          type="right"
+          theme={controlsTheme}
+        />
+        <div className={styles.sliderDots}>{renderDots(controlsTheme)}</div>
+        <ArrowButton
+          onClick={handlePreviousClick}
+          type="left"
+          theme={controlsTheme}
+        />
       </div>
     </div>
   );

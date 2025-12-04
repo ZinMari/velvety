@@ -4,17 +4,19 @@ import { IconArrow } from "../Icons";
 
 interface ArrowButton {
   className?: string;
-  color?: string;
+  theme?: "light" | "dark";
   type?: "left" | "right";
   onClick?: () => void;
 }
 
 const ArrowButton: React.FC<ArrowButton> = ({
   className,
-  color = "var(--color-green-dark)",
+  theme = "dark",
   type = "right",
   onClick,
 }) => {
+  const color =
+    theme === "dark" ? "var(--color-green-dark)" : "var(--color-green-light)";
   return (
     <button
       className={cl(

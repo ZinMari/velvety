@@ -26,6 +26,7 @@ const HeroSection: React.FC = () => {
               className={styles.heroSlider}
               items={renderSliderItems()}
               arrowsLocation="left"
+              controlsTheme="light"
             />
           </div>
         </div>
