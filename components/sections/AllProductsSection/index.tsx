@@ -6,7 +6,16 @@ import Typography from "../../ui/Typography";
 
 import styles from "./style.module.scss";
 
-const PRODUCTS_DATA = [
+type TProduct = {
+  id: number;
+  name: string;
+  src: string;
+  price: number;
+  rating: number;
+  isBestProduct: boolean;
+};
+
+const PRODUCTS_DATA: TProduct[] = [
   {
     id: 1,
     name: "chicori",
