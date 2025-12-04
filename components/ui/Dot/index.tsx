@@ -26,8 +26,8 @@ const Dot: React.FC<DotProps> = ({
       <span
         className={clsx(
           styles.dotVisible,
-          styles[`dot${themeSuffix}`],
-          isActive && styles[`dot${themeSuffix}Active`]
+          styles[`dotVisible${themeSuffix}`],
+          isActive && styles[`dotVisible${themeSuffix}Active`]
         )}
       ></span>
     </button>
