@@ -10,7 +10,7 @@ const PATHS_SLIDER_IMG = ["/products/chicori.png", "/products/holocena.png"];
 
 function renderSliderItems() {
   return PATHS_SLIDER_IMG.map((path) => (
-    <div className={styles.heroSliderItem}>
+    <div key={path} className={styles.heroSliderItem}>
       <img className={styles.heroSliderImg} src={path} alt="" />
     </div>
   ));
