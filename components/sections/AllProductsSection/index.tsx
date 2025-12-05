@@ -11,6 +11,7 @@ import ProductCard from "../../ui/ProductCard";
 import Typography from "../../ui/Typography";
 
 import styles from "./style.module.scss";
+import Link from "next/link";
 
 type FilterObject = {
   category: TCategories[];
@@ -88,13 +89,15 @@ const AllProductsSection: React.FC = () => {
           <ul className={styles.allProductsList}>
             {filterData.slice(0, 4).map((e) => (
               <li className={styles.allProductsCard} key={e.id}>
-                <ProductCard
-                  productName={e.name}
-                  productImg={e.src}
-                  rating={e.rating}
-                  price={e.price}
-                  variant="min"
-                />
+                <Link href={`/product/${e.id}`}>
+                  <ProductCard
+                    productName={e.name}
+                    productImg={e.src}
+                    rating={e.rating}
+                    price={e.price}
+                    variant="min"
+                  />
+                </Link>
               </li>
             ))}
           </ul>
