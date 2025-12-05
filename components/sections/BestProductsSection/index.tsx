@@ -1,3 +1,4 @@
+import Link from "next/link";
 import products from "../../../public/data/products/products.json";
 
 import ProductCard from "../../ui/ProductCard";
@@ -23,13 +24,15 @@ const BestProductsSection: React.FC = () => {
                 const backgroundType = index % 2 ? "ellipse" : "square";
                 return (
                   <li className={styles.bestProductsItem} key={product.id}>
-                    <ProductCard
-                      backgroundType={backgroundType}
-                      productName={product.name}
-                      price={product.price}
-                      rating={product.rating}
-                      productImg={product.src}
-                    />
+                    <Link href={`/product/${product.id}`}>
+                      <ProductCard
+                        backgroundType={backgroundType}
+                        productName={product.name}
+                        price={product.price}
+                        rating={product.rating}
+                        productImg={product.src}
+                      />
+                    </Link>
                   </li>
                 );
               }
