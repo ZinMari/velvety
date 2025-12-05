@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "chicori",
+    "src": "/products/chicori.png",
+    "price": 20,
+    "rating": 4.0,
+    "isBestProduct": true,
+    "category": "Protect"
+  },
+  {
+    "id": 2,
+    "name": "notorious",
+    "src": "/products/notorious.png",
+    "price": 23,
+    "rating": 5.0,
+    "isBestProduct": true,
+    "category": "Makeup Removal"
+  },
+  {
+    "id": 3,
+    "name": "holocena",
+    "src": "/products/holocena.png",
+    "price": 20,
+    "rating": 5.0,
+    "isBestProduct": true,
+    "category": "Anti-waste"
+  },
+  {
+    "id": 4,
+    "name": "classwing",
+    "src": "/products/classwing.png",
+    "price": 20,
+    "rating": 5.0,
+    "isBestProduct": false,
+    "category": "Exfoliate"
+  },
+  {
+    "id": 5,
+    "name": "inamorata",
+    "src": "/products/inamorata.png",
+    "price": 12,
+    "rating": 4.5,
+    "isBestProduct": false,
+    "category": "Revitalizes"
+  },
+  {
+    "id": 6,
+    "name": "lightcool",
+    "src": "/products/lightcool.png",
+    "price": 22.5,
+    "rating": 5.0,
+    "isBestProduct": false,
+    "category": "Regenerates"
+  }
+]

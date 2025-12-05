@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "name": "All needs"
+  },
+  {
+    "id": 2,
+    "name": "Protect"
+  },
+  {
+    "id": 3,
+    "name": "Regenerates"
+  },
+  {
+    "id": 4,
+    "name": "Revitalizes"
+  },
+  {
+    "id": 5,
+    "name": "Feeds"
+  },
+  {
+    "id": 6,
+    "name": "Regulates"
+  },
+  {
+    "id": 7,
+    "name": "Purifies"
+  },
+  {
+    "id": 8,
+    "name": "Makeup Removal"
+  },
+  {
+    "id": 9,
+    "name": "Exfoliate"
+  },
+  {
+    "id": 10,
+    "name": "Antioxidant"
+  },
+  {
+    "id": 11,
+    "name": "Soothes"
+  },
+  {
+    "id": 12,
+    "name": "Smoothes skin texture"
+  },
+  {
+    "id": 13,
+    "name": "Tones"
+  },
+  {
+    "id": 14,
+    "name": "Anti-waste"
+  },
+  {
+    "id": 15,
+    "name": "Hydrate"
+  },
+  {
+    "id": 16,
+    "name": "Strengthens"
+  },
+  {
+    "id": 17,
+    "name": "Regenerates after UV exposure Strengthens"
+  }
+]

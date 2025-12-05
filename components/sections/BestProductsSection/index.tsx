@@ -1,58 +1,10 @@
+import products from "../../../public/data/products/products.json";
+
 import ProductCard from "../../ui/ProductCard";
 import Typography from "../../ui/Typography";
 import styles from "./style.module.scss";
-import clsx from "clsx";
 
-const PRODUCTS_DATA = [
-  {
-    id: 1,
-    name: "chicori",
-    src: "./products/chicori.png",
-    price: 20,
-    rating: 4.0,
-    isBestProduct: true,
-  },
-  {
-    id: 2,
-    name: "notorious",
-    src: "./products/notorious.png",
-    price: 23,
-    rating: 5.0,
-    isBestProduct: true,
-  },
-  {
-    id: 3,
-    name: "holocena",
-    src: "./products/holocena.png",
-    price: 20,
-    rating: 5.0,
-    isBestProduct: true,
-  },
-  {
-    id: 4,
-    name: "classwing",
-    src: "./products/classwing.png",
-    price: 20,
-    rating: 5.0,
-    isBestProduct: false,
-  },
-  {
-    id: 5,
-    name: "inamorata",
-    src: "./products/inamorata.png",
-    price: 12,
-    rating: 4.5,
-    isBestProduct: false,
-  },
-  {
-    id: 6,
-    name: "lightcool",
-    src: "./products/lightcool.png",
-    price: 22.5,
-    rating: 5.0,
-    isBestProduct: false,
-  },
-];
+const PRODUCTS_DATA: TProduct[] = products as TProduct[];
 
 const BestProductsSection: React.FC = () => {
   return (
