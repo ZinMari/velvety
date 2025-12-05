@@ -25,7 +25,7 @@ const Slider: React.FC<SliderProps> = ({
   controlsTheme = "dark",
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
-  const [touchPosition, setTouchPosition] = useState(null);
+  const [touchPosition, setTouchPosition] = useState<number | null>(null);
 
   const handlePreviousClick = () => {
     setCurrentImageIndex(
@@ -42,12 +42,12 @@ const Slider: React.FC<SliderProps> = ({
     setCurrentImageIndex(sliderNumber);
   };
 
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     const touchDown = e.touches[0].clientX;
     setTouchPosition(touchDown);
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     if (touchPosition === null) {
       return;
     }
