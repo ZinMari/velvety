@@ -1,18 +1,24 @@
-import cl from "clsx";
-import styles from "./style.module.scss";
+import products from "../../../public/data/products/products.json";
 
 import Typography from "../../ui/Typography";
 import Button from "../../ui/Button";
 import Slider from "../../ui/Slider";
 import Container from "../../ui/Container";
+import Link from "next/link";
 
-const PATHS_SLIDER_IMG = ["/products/chicori.png", "/products/holocena.png"];
+import styles from "./style.module.scss";
 
 function renderSliderItems() {
-  return PATHS_SLIDER_IMG.map((path) => (
-    <div key={path} className={styles.heroSliderItem}>
-      <img className={styles.heroSliderImg} src={path} alt="" />
-    </div>
+  return products.map((product) => (
+    <Link key={product.id} href={`/product/${product.id}`}>
+      <div className={styles.heroSliderItem}>
+        <img
+          className={styles.heroSliderImg}
+          src={product.src}
+          alt={product.name}
+        />
+      </div>
+    </Link>
   ));
 }
 
