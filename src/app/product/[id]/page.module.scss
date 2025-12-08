@@ -1,8 +1,28 @@
 .product {
   background-color: var(--color-green-title);
+  color: var(--color-light);
 
   &Container {
+    height: 100vh;
     padding-top: var(--padding-section);
     padding-bottom: var(--padding-section);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 50px;
+  }
+
+  &Image {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
   }
 }
