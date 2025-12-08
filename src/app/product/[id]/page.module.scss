@@ -1,0 +1,8 @@
+.product {
+  background-color: var(--color-green-title);
+
+  &Container {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+  }
+}
