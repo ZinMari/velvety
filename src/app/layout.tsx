@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "../../components/ui/Header";
 import Container from "../../components/ui/Container";
 import Footer from "../../components/ui/Footer";
+import CartTab from "../../components/ui/CartTab";
 
 export const metadata: Metadata = {
   title: "VELVETY",
@@ -57,9 +58,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={fontAileron.className}>
-        <Header />
-        {children}
-        <Footer />
+        <main>
+          <Header />
+          {children}
+          <Footer />
+        </main>
+        <CartTab />
       </body>
     </html>
   );
