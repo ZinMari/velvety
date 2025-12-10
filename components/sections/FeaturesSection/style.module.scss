@@ -1,7 +1,10 @@
+@use "../../../src/app/mixins.scss" as *;
+
 .features {
   display: flex;
   background: linear-gradient(to right, #f2f6ef 50.01%, #e4ece0 50.01% 100%);
   padding-top: var(--padding-section);
+  padding-bottom: var(--padding-section);
   border-bottom: var(--border);
 
   &Container {
@@ -32,12 +35,13 @@
   }
 
   &Image {
-    max-width: 570px;
+    max-width: 580px;
     position: relative;
-    top: 50px;
   }
 
   &Img {
+    position: absolute;
+    top: 50px;
     max-width: 100%;
   }
 
