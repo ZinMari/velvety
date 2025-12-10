@@ -1,3 +1,5 @@
+@use "../../../src/app/mixins.scss" as *;
+
 .typography {
   &H1 {
     font-weight: 300;
@@ -15,7 +17,7 @@
   }
 
   &H3 {
-    font-size: 56px;
+    font-size: clamp(40px, 34.1676px + 1.5595vw, 56px);
     font-weight: 300;
     line-height: 120%;
     font-family: var(--font-dihjauti);
