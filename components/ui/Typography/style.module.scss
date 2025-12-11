@@ -25,7 +25,7 @@
   }
 
   &H4 {
-    font-size: 28px;
+    font-size: clamp(24px, 22.5966px + 0.3752vw, 28px);
     font-weight: 300;
     line-height: 110%;
     font-family: var(--font-aileron);
