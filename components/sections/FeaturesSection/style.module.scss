@@ -7,31 +7,27 @@
   padding-top: var(--padding-section);
   padding-bottom: var(--padding-section);
   border-bottom: var(--border);
+  z-index: -1;
+
+  @include media(tablet) {
+    background: transparent;
+    padding: 0;
+  }
 
   &Container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 110px;
+
+    @include media(tablet) {
+      grid-template-columns: 1fr;
+      padding: 0;
+    }
   }
 
   &Left {
-    padding-right: 10px;
-  }
-
-  &Title {
-    overflow: hidden;
-
-    &Line {
-      position: relative;
-      display: block;
-      animation: featuresTitle 2s infinite cubic-bezier(0.175, 0.885, 0.32, 1.1);
-
-      &First {
-        top: 200px;
-      }
-
-      &Second {
-        top: 300px;
-      }
+    @include media(tablet) {
+      background: var(--color-light);
     }
   }
 
@@ -39,11 +35,20 @@
     position: absolute;
     bottom: -50px;
     max-width: 580px;
-    margin: 0 auto;
+
+    @include media(tablet) {
+      position: static;
+    }
   }
 
   &Img {
     max-width: 100%;
+  }
+
+  &Right {
+    @include media(tablet) {
+      background: var(--color-green-light);
+    }
   }
 
   .list {
@@ -51,7 +56,11 @@
     display: flex;
     flex-direction: column;
     gap: 46px;
-    padding-left: 56px;
+
+    @include media(tablet) {
+      gap: 32px;
+      padding: 56px 16px;
+    }
 
     &Item {
       position: relative;
@@ -60,6 +69,10 @@
       gap: 24px;
       overflow: hidden;
       padding-bottom: 10px;
+
+      @include media(tablet) {
+        flex-wrap: wrap;
+      }
 
       &::after {
         position: absolute;
