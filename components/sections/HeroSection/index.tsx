@@ -10,14 +10,16 @@ import styles from "./style.module.scss";
 
 function renderSliderItems() {
   return products.map((product) => (
-    <Link key={product.id} href={`/product/${product.id}`}>
-      <div className={styles.heroSliderItem}>
-        <img
-          className={styles.heroSliderImg}
-          src={product.src}
-          alt={product.name}
-        />
-      </div>
+    <Link
+      className={styles.heroSliderItem}
+      key={product.id}
+      href={`/product/${product.id}`}
+    >
+      <img
+        className={styles.heroSliderImg}
+        src={product.src}
+        alt={product.name}
+      />
     </Link>
   ));
 }
