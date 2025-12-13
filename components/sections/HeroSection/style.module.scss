@@ -1,10 +1,16 @@
+@use "../../../src/app/mixins.scss" as *;
+
 .hero {
   position: relative;
   background: linear-gradient(
     90deg,
-    var(--color-green-title) 0 50.01%,
+    var(--color-green-title) 0 50%,
     transparent 50% 100%
   );
+
+  @include media(tablet) {
+    background: transparent;
+  }
 
   &::before {
     position: absolute;
@@ -16,21 +22,38 @@
     background: linear-gradient(rgba(0, 0, 0, 0.5)),
       url(../../../public/hero_bg.jpg) no-repeat center/cover;
     z-index: -1;
+
+    @include media(tablet) {
+      width: 100%;
+    }
   }
 
   &Container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 420px 1fr;
+    gap: 50px;
+
+    @include media(tablet) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &Left {
     position: relative;
+
+    @include media(tablet) {
+      order: 1;
+    }
   }
 
   &Slider {
     &Wrap {
       position: absolute;
       top: 85px;
+
+      @include media(tablet) {
+        position: static;
+      }
     }
 
     &Item {
@@ -51,6 +74,14 @@
   &Content {
     padding-top: 146px;
     flex-basis: 60%;
+
+    @include media(tablet) {
+      display: inline-flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
   }
 
   &Title {
