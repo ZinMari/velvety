@@ -1,3 +1,5 @@
+@use "../../../src/app/mixins.scss" as *;
+
 .button {
   display: flex;
   align-items: center;
@@ -17,7 +19,7 @@
 
   &Max {
     gap: 20px;
-    font-size: 22px;
+    font-size: clamp(16px, 13.8949px + 0.5629vw, 22px);
     padding: 16px 103px;
   }
 }
