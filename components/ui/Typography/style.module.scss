@@ -9,7 +9,7 @@
   }
 
   &H2 {
-    font-size: 28px;
+    font-size: clamp(24px, 20.28px + 1.01vw, 28px);
     font-weight: 300;
     line-height: 110%;
     font-family: var(--font-aileron);
