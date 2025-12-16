@@ -45,7 +45,8 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               Login
             </Link>
             <Link className={styles.headerUserPanelCart} href={"#"}>
-              Cart(0)
+              Cart
+              <span className={styles.headerCartCounter}>(0)</span>
             </Link>
           </div>
           <div className={styles.headerBurger}>

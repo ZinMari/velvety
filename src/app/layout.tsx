@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.scss";
 import Header from "../../components/ui/Header";
 import Footer from "../../components/ui/Footer";
-import CartTab from "../../components/ui/CartTab";
 
 export const metadata: Metadata = {
   title: "VELVETY",
@@ -57,12 +56,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={fontAileron.className}>
-        <main>
+        <div>
           <Header />
           {children}
           <Footer />
-        </main>
-        <CartTab />
+        </div>
       </body>
     </html>
   );
