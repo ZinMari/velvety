@@ -25,4 +25,29 @@
       object-fit: contain;
     }
   }
+
+  &Name {
+    text-transform: uppercase;
+  }
+
+  &Info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &Count {
+    display: inline-flex;
+    font-size: 30px;
+    font-weight: 700;
+    gap: 30px;
+    align-items: center;
+  }
+
+  &Btn {
+    border: 1px solid var(--color-light);
+    font-size: 60px;
+    line-height: 0;
+    padding: 30px;
+  }
 }
