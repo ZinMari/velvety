@@ -1,13 +1,14 @@
 "use client";
 
-import clsx from "clsx";
-import Logo from "../Logo";
+import { useState } from "react";
 
+import clsx from "clsx";
 import styles from "./style.module.scss";
+
+import Logo from "../Logo";
 import Menu from "../Menu";
 import Link from "next/link";
 import Burger from "../Burger";
-import { useState } from "react";
 import Container from "../Container";
 
 interface HeaderProps {
