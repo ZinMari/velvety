@@ -13,7 +13,7 @@ type TActions = {
 
 const INITIAL_STATE: TState = {
   cart: [],
-  totalItems: 10,
+  totalItems: 0,
   totalPrice: 0,
 };
 
@@ -24,7 +24,6 @@ export const useCartStore = create<TState & TActions>((set, get) => ({
   addToCard: (product: TProduct) => {
     const cart = get().cart;
     const cartItem = cart.find((item) => item.id === product.id);
-
     if (cartItem) {
       const updateCart = cart.map((item) =>
         item.id === product.id
@@ -37,6 +36,13 @@ export const useCartStore = create<TState & TActions>((set, get) => ({
 
       set((state) => ({
         cart: updateCart,
+        totalItems: state.totalItems + 1,
+        totalPrice: state.totalPrice + product.price,
+      }));
+    } else {
+      const updatedCart = [...cart, { ...product, quantity: 1 }];
+      set((state) => ({
+        cart: updatedCart,
         totalItems: state.totalItems + 1,
         totalPrice: state.totalPrice + product.price,
       }));
