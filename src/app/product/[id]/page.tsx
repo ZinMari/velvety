@@ -9,6 +9,14 @@ import Typography from "../../../../components/ui/Typography";
 
 export default function Page({ params }: { params: Promise<{ id: string }> }) {
   const [currentProduct, setCurrentProduct] = useState<null | TProduct>(null);
+  const [quantity, setQuantity] = useState<number>(1);
+
+  const handleMinusQuantity = () => {
+    setQuantity((quantity) => (quantity - 1 < 1 ? 1 : quantity - 1));
+  };
+  const handlePlusQuantity = () => {
+    setQuantity((quantity) => quantity + 1);
+  };
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -39,9 +47,13 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
             2
           )} $`}</p>
           <div className={styles.productCount}>
-            <button className={styles.productBtn}>-</button>
-            <span className={styles.productNumber}>1</span>
-            <button className={styles.productBtn}>+</button>
+            <button onClick={handleMinusQuantity} className={styles.productBtn}>
+              -
+            </button>
+            <span className={styles.productNumber}>{quantity}</span>
+            <button onClick={handlePlusQuantity} className={styles.productBtn}>
+              +
+            </button>
           </div>
           <button className={styles.productBtn}>Add to Cart</button>
         </div>
