@@ -6,4 +6,5 @@ type TProduct = {
   rating: number;
   isBestProduct: boolean;
   category: TCategories;
+  quantity?: number;
 };
