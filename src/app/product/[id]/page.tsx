@@ -1,4 +1,6 @@
 "use client";
+
+import { useCartStore } from "../../../../store/useCartStore";
 import { useEffect, useState } from "react";
 
 import Container from "../../../../components/ui/Container";
@@ -10,12 +12,19 @@ import Typography from "../../../../components/ui/Typography";
 export default function Page({ params }: { params: Promise<{ id: string }> }) {
   const [currentProduct, setCurrentProduct] = useState<null | TProduct>(null);
   const [quantity, setQuantity] = useState<number>(1);
+  const addToCart = useCartStore((state) => state.addToCart);
+  const cart = useCartStore((state) => state.cart);
+  console.log(cart);
 
   const handleMinusQuantity = () => {
     setQuantity((quantity) => (quantity - 1 < 1 ? 1 : quantity - 1));
   };
   const handlePlusQuantity = () => {
     setQuantity((quantity) => quantity + 1);
+  };
+
+  const handleAddToCart = () => {
+    addToCart(currentProduct as TProduct, quantity);
   };
 
   useEffect(() => {
@@ -55,7 +64,9 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
               +
             </button>
           </div>
-          <button className={styles.productBtn}>Add to Cart</button>
+          <button onClick={handleAddToCart} className={styles.productBtn}>
+            Add to Cart
+          </button>
         </div>
       </Container>
     </main>

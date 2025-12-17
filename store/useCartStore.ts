@@ -1,58 +1,51 @@
 import { create } from "zustand";
 
+type TCartItem = {
+  item: TProduct;
+  quantity: number;
+};
+
 type TState = {
-  cart: TProduct[];
-  totalItems: number;
-  totalPrice: number;
+  cart: TCartItem[];
 };
 
 type TActions = {
-  addToCard: (item: TProduct) => void;
-  removeFromCard: (item: TProduct) => void;
+  addToCart: (item: TProduct, quantity: number) => void;
+  removeFromCart: (item: TProduct) => void;
 };
 
 const INITIAL_STATE: TState = {
   cart: [],
-  totalItems: 0,
-  totalPrice: 0,
 };
 
 export const useCartStore = create<TState & TActions>((set, get) => ({
   cart: INITIAL_STATE.cart,
-  totalItems: INITIAL_STATE.totalItems,
-  totalPrice: INITIAL_STATE.totalPrice,
-  addToCard: (product: TProduct) => {
+  addToCart: (product: TProduct, quantity: number) => {
     const cart = get().cart;
-    const cartItem = cart.find((item) => item.id === product.id);
+    const cartItem = cart.find((cartItem) => cartItem.item.id === product.id);
     if (cartItem) {
-      const updateCart = cart.map((item) =>
-        item.id === product.id
+      const updateCart = cart.map((cartItem) =>
+        cartItem.item.id === product.id
           ? {
-              ...item,
-              quantity: (item.quantity as number) + 1,
+              item: { ...cartItem.item },
+              quantity: (cartItem.quantity as number) + quantity,
             }
-          : item
+          : cartItem
       );
 
       set((state) => ({
         cart: updateCart,
-        totalItems: state.totalItems + 1,
-        totalPrice: state.totalPrice + product.price,
       }));
     } else {
-      const updatedCart = [...cart, { ...product, quantity: 1 }];
+      const updatedCart = [...cart, { item: { ...product }, quantity: 1 }];
       set((state) => ({
         cart: updatedCart,
-        totalItems: state.totalItems + 1,
-        totalPrice: state.totalPrice + product.price,
       }));
     }
   },
-  removeFromCard(product: TProduct) {
+  removeFromCart(product: TProduct) {
     set((state) => ({
-      cart: state.cart.filter((item) => item.id !== product.id),
-      totalItems: state.totalItems - 1,
-      totalPrice: state.totalPrice - product.price,
+      cart: state.cart.filter((cartItem) => cartItem.item.id !== product.id),
     }));
   },
 }));
