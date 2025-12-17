@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import { useCartStore } from "../../../store/useCartStore";
+
 import clsx from "clsx";
 import styles from "./style.module.scss";
 
@@ -17,6 +19,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ className }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const totalItems = useCartStore((state) => state.totalItems);
 
   return (
     <header className={clsx(styles.header, className)}>
@@ -47,7 +50,9 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             </Link>
             <Link className={styles.headerUserPanelCart} href={"#"}>
               Cart
-              <span className={styles.headerCartCounter}>(0)</span>
+              <span
+                className={styles.headerCartCounter}
+              >{`(${totalItems})`}</span>
             </Link>
           </div>
           <div className={styles.headerBurger}>
