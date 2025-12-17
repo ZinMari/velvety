@@ -12,6 +12,7 @@ import Typography from "../../../../components/ui/Typography";
 export default function Page({ params }: { params: Promise<{ id: string }> }) {
   const [currentProduct, setCurrentProduct] = useState<null | TProduct>(null);
   const [quantity, setQuantity] = useState<number>(1);
+
   const addToCart = useCartStore((state) => state.addToCart);
   const cart = useCartStore((state) => state.cart);
   console.log(cart);

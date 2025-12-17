@@ -19,7 +19,10 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ className }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const totalItems = useCartStore((state) => state.totalItems);
+  const totalItems = useCartStore((state) => state.cart).reduce(
+    (acc, item) => (acc += item.quantity),
+    0
+  );
 
   return (
     <header className={clsx(styles.header, className)}>

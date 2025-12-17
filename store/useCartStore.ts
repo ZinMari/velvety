@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 type TCartItem = {
   item: TProduct;
@@ -18,34 +19,45 @@ const INITIAL_STATE: TState = {
   cart: [],
 };
 
-export const useCartStore = create<TState & TActions>((set, get) => ({
-  cart: INITIAL_STATE.cart,
-  addToCart: (product: TProduct, quantity: number) => {
-    const cart = get().cart;
-    const cartItem = cart.find((cartItem) => cartItem.item.id === product.id);
-    if (cartItem) {
-      const updateCart = cart.map((cartItem) =>
-        cartItem.item.id === product.id
-          ? {
-              item: { ...cartItem.item },
-              quantity: (cartItem.quantity as number) + quantity,
-            }
-          : cartItem
-      );
+export const useCartStore = create<TState & TActions>()(
+  persist(
+    (set, get) => ({
+      cart: INITIAL_STATE.cart,
+      addToCart: (product: TProduct, quantity: number) => {
+        const cart = get().cart;
+        const cartItem = cart.find(
+          (cartItem) => cartItem.item.id === product.id
+        );
+        if (cartItem) {
+          const updateCart = cart.map((cartItem) =>
+            cartItem.item.id === product.id
+              ? {
+                  item: { ...cartItem.item },
+                  quantity: (cartItem.quantity as number) + quantity,
+                }
+              : cartItem
+          );
 
-      set((state) => ({
-        cart: updateCart,
-      }));
-    } else {
-      const updatedCart = [...cart, { item: { ...product }, quantity: 1 }];
-      set((state) => ({
-        cart: updatedCart,
-      }));
+          set((state) => ({
+            cart: updateCart,
+          }));
+        } else {
+          const updatedCart = [...cart, { item: { ...product }, quantity: 1 }];
+          set((state) => ({
+            cart: updatedCart,
+          }));
+        }
+      },
+      removeFromCart(product: TProduct) {
+        set((state) => ({
+          cart: state.cart.filter(
+            (cartItem) => cartItem.item.id !== product.id
+          ),
+        }));
+      },
+    }),
+    {
+      name: "cart-storage",
     }
-  },
-  removeFromCart(product: TProduct) {
-    set((state) => ({
-      cart: state.cart.filter((cartItem) => cartItem.item.id !== product.id),
-    }));
-  },
-}));
+  )
+);
