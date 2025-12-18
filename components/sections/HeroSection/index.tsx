@@ -26,28 +26,30 @@ function renderSliderItems() {
 
 const HeroSection: React.FC = () => {
   return (
-    <section className={styles.hero}>
-      <Container className={styles.heroContainer}>
-        <div className={styles.heroLeft}>
-          <div className={styles.heroSliderWrap}>
-            <Slider
-              className={styles.heroSlider}
-              items={renderSliderItems()}
-              arrowsLocation="left"
-              controlsTheme="light"
-            />
+    <div className={styles.hero}>
+      <section className={styles.heroWrap}>
+        <Container className={styles.heroContainer}>
+          <div className={styles.heroLeft}>
+            <div className={styles.heroSliderWrap}>
+              <Slider
+                className={styles.heroSlider}
+                items={renderSliderItems()}
+                arrowsLocation="left"
+                controlsTheme="light"
+              />
+            </div>
           </div>
-        </div>
-        <div className={styles.heroContent}>
-          <Typography className={styles.heroTitle} as="h1">
-            Let nature take care of&nbsp;your body and soul
-          </Typography>
-          <Button className={styles.heroButton} isBorder={false} type="max">
-            Shop now
-          </Button>
-        </div>
-      </Container>
-    </section>
+          <div className={styles.heroContent}>
+            <Typography className={styles.heroTitle} as="h1">
+              Let nature take care of&nbsp;your body and soul
+            </Typography>
+            <Button className={styles.heroButton} isBorder={false} type="max">
+              Shop now
+            </Button>
+          </div>
+        </Container>
+      </section>
+    </div>
   );
 };
 

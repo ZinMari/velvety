@@ -1,30 +1,36 @@
 @use "../../../src/app/mixins.scss" as *;
 
 .hero {
+  background-color: var(--color-green-title);
   position: relative;
-  background: linear-gradient(
-    90deg,
-    var(--color-green-title) 0 50%,
-    transparent 50% 100%
-  );
+  z-index: 0;
 
-  @include media(tablet) {
-    background: transparent;
-  }
-
-  &::before {
-    position: absolute;
-    content: "";
-    height: 100%;
-    width: 50%;
-    top: 0;
-    right: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5)),
-      url(../../../public/hero_bg.jpg) no-repeat center/cover;
-    z-index: -1;
+  &Wrap {
+    position: relative;
+    background: linear-gradient(
+      90deg,
+      var(--color-green-title) 0 50%,
+      transparent 50% 100%
+    );
 
     @include media(tablet) {
-      width: 100%;
+      background: transparent;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 50%;
+      top: 0;
+      right: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.5)),
+        url(../../../public/hero_bg.jpg) no-repeat center/cover;
+      z-index: -1;
+
+      @include media(tablet) {
+        width: 100%;
+      }
     }
   }
 
